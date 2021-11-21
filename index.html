@@ -9,10 +9,11 @@
   <link rel="icon" href="favicon.png" type="image/x-icon" />
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="index.js"></script>
 </head>
 
 <body>
-  <main>
+  <div class='main'>
     <div class="left">
       <img class="logo" src="meeter.png" alt="logo meeter">
       <p>Szukasz najlepszego sposobu na poznanie nowy ludzi?</p>
@@ -35,12 +36,41 @@
           <div class="pass">Zapomniałeś hasła?</div>
           <input type="submit" value="Zaloguj">
           <div class="signupLink">
-            Nie masz konta? <a href="#">Zarejestruj się!</a>
+            Nie masz konta? <a href="#" id="button" class="button">Zarejestruj się!</a>
           </div>
         </form>
       </div>
     </div>
-  </main>
+
+    <div class="bg-modal"> 
+        <div class="formSpace">
+          <div class="close">&#10006;</div>
+          <h1>Rejestracja</h1>
+          <form method="post">
+            <div class="txtField">
+              <input type="text" required>
+              <span></span>
+              <label>Email</label>
+            </div>
+            <div class="txtField">
+              <input type="password" required>
+              <span></span>
+              <label>Hasło</label>
+            </div>
+            <div class="txtField">
+              <input type="password" required>
+              <span></span>
+              <label>Hasło</label>
+            </div>
+            <input type="submit" value="Zarejestruj">
+            </div>
+          </form>
+        </div>
+    
+      </div>
+    </div>
+
+  
 </body>
 
 </html>

@@ -6,13 +6,13 @@
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
 }
-main {
+.main {
   height: 700px;
   display: flex;
   justify-content: space-around;
 }
 @media only screen and (max-width: 1200px) {
-  main {
+  .main {
     flex-direction: column;
   }
 }
@@ -38,7 +38,7 @@ p {
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap");
 
-body {
+html {
   margin: 0;
   padding: 0;
   background: linear-gradient(120deg, #2980b9, #8e44ad);
@@ -141,4 +141,37 @@ input[type="submit"] {
 }
 .signupLink a:hover {
   text-decoration: underline;
+}
+
+.bg-modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  margin: 15px auto;
+  display: block;
+  width: 50%;
+  padding: 8px;
+  border: 1px solid gray;
+}
+
+.close {
+  position: relative;
+  right: 10px;
+  top: 2px;
+  font-size: 22px;
+  color: #333;
+  cursor: pointer;
+  float: right;
+}
+
+.close:hover {
+  color: #666;
 }
