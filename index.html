@@ -42,35 +42,54 @@
       </div>
     </div>
 
-    <div class="bg-modal"> 
-        <div class="formSpace">
-          <div class="close">&#10006;</div>
-          <h1>Rejestracja</h1>
+    <div class="bg-modal">
+      <div class="formSpace">
+        <div class="close">&#10006;</div>
+        <h1>Rejestracja</h1>
+        <form method="post">
+          <div class="txtField">
+            <input type="text" required>
+            <span></span>
+            <label>Imie</label>
+          </div>
+          <div class="txtField">
+            <input type="text" required>
+            <span></span>
+            <label>Nazwisko</label>
+          </div>
+
+          <div class="txtField">
+            <input type="text" required>
+            <span></span>
+            <label>Email</label>
+          </div>
+          <div class="txtField">
+            <input type="password" required>
+            <span></span>
+            <label>Hasło</label>
+          </div>
+          <div class="txtField">
+            <input type="password" required>
+            <span></span>
+            <label>Powtórz hasło</label>
+          </div>
           <form method="post">
-            <div class="txtField">
-              <input type="text" required>
-              <span></span>
-              <label>Email</label>
-            </div>
-            <div class="txtField">
-              <input type="password" required>
-              <span></span>
-              <label>Hasło</label>
-            </div>
-            <div class="txtField">
-              <input type="password" required>
-              <span></span>
-              <label>Hasło</label>
-            </div>
+            <div class="datePicker">
+            <label>Data urodzenia</label>
+            <input type="date" min="1980-01-01" max="2021-01-01"> <br>
             <input type="submit" value="Zarejestruj">
             </div>
           </form>
-        </div>
-    
+
+
       </div>
+      </form>
     </div>
 
-  
+  </div>
+  </div>
+
+
 </body>
 
 </html>

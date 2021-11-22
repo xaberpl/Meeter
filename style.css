@@ -56,6 +56,14 @@ html {
   width: 400px;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+  padding: 0 30px 30px 30px;
+}
+.formSpace {
+  background-color: #fff;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+  padding: 0 30px 30px 30px;
 }
 .formSpace h1 {
   text-align: center;
@@ -103,7 +111,7 @@ form .txtField {
 .txtField input:focus ~ label,
 .txtField input:valid ~ label {
   top: -5px;
-  color: #2691d9;
+  border-bottom: #2691d9;
 }
 .txtField input:focus ~ span::before,
 .txtField input:valid ~ span::before {
@@ -155,7 +163,7 @@ input[type="submit"] {
 }
 
 input {
-  margin: 15px auto;
+  margin: 0 auto;
   display: block;
   width: 50%;
   padding: 8px;
@@ -164,8 +172,7 @@ input {
 
 .close {
   position: relative;
-  right: 10px;
-  top: 2px;
+  right: -20px;
   font-size: 22px;
   color: #333;
   cursor: pointer;
@@ -174,4 +181,33 @@ input {
 
 .close:hover {
   color: #666;
+}
+
+/* input[type="date"] {
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background: #2691d9;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+} */
+
+input[type="date"] {
+  margin: 0 auto 30px;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid gray;
+  float: right;
+  margin-top: 10px;
+}
+
+.datePicker label {
+  padding: 0 5px;
+  height: 40px;
+  /* font-size: 16px; */
+  color: #adadad;
 }
