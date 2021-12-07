@@ -11,6 +11,7 @@
 
   <script type="text/javascript" src="index.js"></script>
   <script type="text/javascript" src="app.js"></script>
+  <script src="https://kit.fontawesome.com/8ac3213b3c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -48,12 +49,19 @@
       <div class="formSpace">
         <div class="close">&#10006;</div>
         <h1>Rejestracja</h1>
-        <form method="post" action="/adduser">
+        <form class="form" id="form" method="post" action="/adduser">
+
           <div class="txtField">
-            <input type="text" name="firstName" required>
+            <div class="form-control">
+            <input type="text" name="firstName" id="firstName" />
             <span></span>
             <label>Imie</label>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
           </div>
+          </div>
+
           <div class="txtField">
             <input type="text" name="lastName"required>
             <span></span>
@@ -65,21 +73,24 @@
             <span></span>
             <label>Email</label>
           </div>
+
           <div class="txtField">
             <input type="password" name="password" required>
             <span></span>
             <label>Hasło</label>
           </div>
+
           <div class="txtField">
             <input type="password" name="password2" required>
             <span></span>
             <label>Powtórz hasło</label>
           </div>
+          
           <form method="post">
             <div class="datePicker">
             <label>Data urodzenia</label>
             <input type="date" min="1980-01-01" max="2021-01-01"> <br>
-            <input type="submit" value="Zarejestruj">
+            <input type="submit" value="Zarejestruj" onclick="checkInputs()">
             </div>
           </form>
 
@@ -91,7 +102,7 @@
   </div>
   </div>
 
-
+  <script src="dataValidation.js"></script>
 </body>
 
 </html>
