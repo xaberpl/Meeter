@@ -54,7 +54,7 @@
           <h1>Rejestracja</h1>
           <form class="form" id="form" method="post" action="/adduser">
             <div class="txtField">
-              <div class="form-control">
+              <div class="form-control" id="fn">
                 <input
                   type="text"
                   placeholder=" "
@@ -72,38 +72,94 @@
             </div>
 
             <div class="txtField">
-              <input type="text" placeholder=" " name="lastName" />
-              <span></span>
-              <label>Nazwisko</label>
+              <div class="form-control" id="ln">
+                <input
+                  type="text"
+                  placeholder=" "
+                  name="lastName"
+                  id="lastName"
+                />
+                <span></span>
+                <label>Nazwisko</label>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <div class="errorMsg">
+                  <small>Error message</small>
+                </div>
+              </div>
             </div>
 
             <div class="txtField">
-              <input type="text" placeholder=" " name="email" />
-              <span></span>
-              <label>Email</label>
+              <div class="form-control" id="em">
+                <input
+                  type="text"
+                  placeholder=" "
+                  name="email"
+                  id="email"
+                />
+                <span></span>
+                <label>Email</label>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <div class="errorMsg">
+                  <small>Error message</small>
+                </div>
+              </div>
             </div>
 
             <div class="txtField">
-              <input type="password" placeholder=" " name="password" />
-              <span></span>
-              <label>Hasło</label>
+              <div class="form-control" id="pd">
+                <input
+                  type="password"
+                  placeholder=" "
+                  name="password"
+                  id="password"
+                />
+                <span></span>
+                <label>Hasło</label>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <div class="errorMsg">
+                  <small>Error message</small>
+                </div>
+              </div>
             </div>
 
             <div class="txtField">
-              <input type="password" placeholder=" " name="password2" />
-              <span></span>
-              <label>Powtórz hasło</label>
+              <div class="form-control"id="pd2">
+                <input
+                  type="password"
+                  placeholder=" "
+                  name="password2"
+                  id="password2"
+                />
+                <span></span>
+                <label>Powtórz hasło</label>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <div class="errorMsg">
+                  <small>Error message</small>
+                </div>
+              </div>
             </div>
 
             <form method="post">
               <div class="datePicker">
+                <div class="form-control" id="dp">
                 <label>Data urodzenia</label>
-                <input type="date" min="1980-01-01" max="2021-01-01" /> <br />
+                <input type="date" min=null max=null name="datePicker" id="datePicker"/> <br />
+                <div class="errorMsg">
+                  <small style="bottom: -45px;">Error message</small>
+                </div>
                 <input
                   type="submit"
                   value="Zarejestruj"
                   onclick="checkInputs()"
                 />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                
+                </div>
               </div>
             </form>
           </form>
