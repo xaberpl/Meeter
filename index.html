@@ -1,108 +1,116 @@
 <!DOCTYPE html>
 <html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meeter</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meeter</title>
-  <link rel="icon" href="favicon.png" type="image/x-icon" />
-  <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script
+      src="https://kit.fontawesome.com/8ac3213b3c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <script type="text/javascript" src="index.js"></script>
-  <script type="text/javascript" src="app.js"></script>
-  <script src="https://kit.fontawesome.com/8ac3213b3c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <div class='main'>
-    <div class="left">
-      <img class="logo" src="meeter.png" alt="logo meeter">
-      <p>Szukasz najlepszego sposobu na poznanie nowy ludzi?</p>
-      <p>Znalazłeś! Nie szukaj dalej!</p>
-    </div>
-    <div class="right">
-      <div class="formSpace">
-        <h1>Zaloguj</h1>
-        <form method="post">
-          <div class="txtField">
-            <input type="text" required>
-            <span></span>
-            <label>Email</label>
-          </div>
-          <div class="txtField">
-            <input type="password" required>
-            <span></span>
-            <label>Hasło</label>
-          </div>
-          <div class="pass">Zapomniałeś hasła?</div>
-          <input type="submit" value="Zaloguj">
-          <div class="signupLink">
-            Nie masz konta? <a href="#" id="button" class="button">Zarejestruj się!</a>
-          </div>
-        </form>
+  <body>
+    <div class="main">
+      <div class="left">
+        <img class="logo" src="meeter.png" alt="logo meeter" />
+        <p>Szukasz najlepszego sposobu na poznanie nowy ludzi?</p>
+        <p>Znalazłeś! Nie szukaj dalej!</p>
       </div>
-    </div>
-
-    <div class="bg-modal">
-      <div class="formSpace">
-        <div class="close">&#10006;</div>
-        <h1>Rejestracja</h1>
-        <form class="form" id="form" method="post" action="/adduser">
-
-          <div class="txtField">
-            <div class="form-control">
-            <input type="text" name="firstName" id="firstName" />
-            <span></span>
-            <label>Imie</label>
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
-            <small>Error message</small>
-          </div>
-          </div>
-
-          <div class="txtField">
-            <input type="text" name="lastName"required>
-            <span></span>
-            <label>Nazwisko</label>
-          </div>
-
-          <div class="txtField">
-            <input type="text" name="email"required>
-            <span></span>
-            <label>Email</label>
-          </div>
-
-          <div class="txtField">
-            <input type="password" name="password" required>
-            <span></span>
-            <label>Hasło</label>
-          </div>
-
-          <div class="txtField">
-            <input type="password" name="password2" required>
-            <span></span>
-            <label>Powtórz hasło</label>
-          </div>
-          
+      <div class="right">
+        <div class="formSpace">
+          <h1>Zaloguj</h1>
           <form method="post">
-            <div class="datePicker">
-            <label>Data urodzenia</label>
-            <input type="date" min="1980-01-01" max="2021-01-01"> <br>
-            <input type="submit" value="Zarejestruj" onclick="checkInputs()">
+            <div class="txtField">
+              <input type="text" placeholder=" " />
+              <span></span>
+              <label>Email</label>
+            </div>
+            <div class="txtField">
+              <input type="password" placeholder=" " />
+              <span></span>
+              <label>Hasło</label>
+            </div>
+            <div class="pass">Zapomniałeś hasła?</div>
+            <input type="submit" value="Zaloguj" />
+            <div class="signupLink">
+              Nie masz konta?
+              <a href="#" id="button" class="button">Zarejestruj się!</a>
             </div>
           </form>
-
-
+        </div>
       </div>
-      </form>
+
+      <div class="bg-modal">
+        <div class="formSpace">
+          <div class="close">&#10006;</div>
+          <h1>Rejestracja</h1>
+          <form class="form" id="form" method="post" action="/adduser">
+            <div class="txtField">
+              <div class="form-control">
+                <input
+                  type="text"
+                  placeholder=" "
+                  name="firstName"
+                  id="firstName"
+                />
+                <span></span>
+                <label>Imie</label>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <div class="errorMsg">
+                  <small>Error message</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="txtField">
+              <input type="text" placeholder=" " name="lastName" />
+              <span></span>
+              <label>Nazwisko</label>
+            </div>
+
+            <div class="txtField">
+              <input type="text" placeholder=" " name="email" />
+              <span></span>
+              <label>Email</label>
+            </div>
+
+            <div class="txtField">
+              <input type="password" placeholder=" " name="password" />
+              <span></span>
+              <label>Hasło</label>
+            </div>
+
+            <div class="txtField">
+              <input type="password" placeholder=" " name="password2" />
+              <span></span>
+              <label>Powtórz hasło</label>
+            </div>
+
+            <form method="post">
+              <div class="datePicker">
+                <label>Data urodzenia</label>
+                <input type="date" min="1980-01-01" max="2021-01-01" /> <br />
+                <input
+                  type="submit"
+                  value="Zarejestruj"
+                  onclick="checkInputs()"
+                />
+              </div>
+            </form>
+          </form>
+        </div>
+      </div>
     </div>
 
-  </div>
-  </div>
-
-  <script src="dataValidation.js"></script>
-</body>
-
+    <script src="dataValidation.js"></script>
+  </body>
 </html>

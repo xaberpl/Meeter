@@ -17,6 +17,7 @@ function checkInputs() {
 		setErrorFor(firstName, 'Username cannot be blank');
 	} else {
 		setSuccessFor(firstName);
+		
 	}
 
 }
@@ -31,4 +32,5 @@ function setErrorFor(input, message) {
 function setSuccessFor(input) {
 	const formControl = input.parentElement;
 	formControl.className = 'form-control success';
+	form.submit();
 }
