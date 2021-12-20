@@ -95,7 +95,7 @@ function checkInputs() {
 
   // //
   if (dateValue == "") {
-    setErrorFor(datePicker, "Wybierz date (kurwo)");
+    setErrorFor(datePicker, "Wybierz date");
   } else if (dateValue > dateCalculation) {
     setErrorFor(datePicker, "Jesteś za młody");
   } else {

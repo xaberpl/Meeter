@@ -134,6 +134,7 @@ input[type="submit"] {
   color: #e9f4fb;
   font-weight: 700;
   cursor: pointer;
+  margin-top: 15px;
 }
 
 .signupLink {
