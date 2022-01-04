@@ -1,6 +1,9 @@
 var express = require("express");
+require("dotenv").config();
+
+// app
 var app = express();
-var port = 3000;
+
 var bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -9,7 +12,17 @@ app.use(express.static(__dirname));
 
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://127.0.0.1:27017/MeeterDB");
+
+// db
+mongoose
+  .connect(process.env.DATABASE, {
+    useNewUrlParser: true,
+    //useCreateIndex: true,
+    //useFindAndModify: false,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("DBconnected"))
+  .catch((err) => console.log(err));
 var nameSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
@@ -19,8 +32,9 @@ var nameSchema = new mongoose.Schema({
   datePicker: String,
 });
 var User = mongoose.model("User", nameSchema);
+// route
 
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
@@ -36,6 +50,7 @@ app.post("/adduser", (req, res) => {
     });
 });
 
+const port = process.env.PORT || 3000
 app.listen(port, () => {
   console.log("Server listening on port " + port);
 });
