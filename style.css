@@ -6,13 +6,15 @@
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
 }
-.main {
+main {
   height: 700px;
   display: flex;
   justify-content: space-around;
+  min-height: 100vh;
+  align-items: center;
 }
 @media only screen and (max-width: 1200px) {
-  .main {
+  main {
     flex-direction: column;
   }
 }
@@ -58,13 +60,6 @@ html {
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
   padding: 0 30px 30px 30px;
 }
-.formSpace {
-  background-color: #fff;
-  width: 400px;
-  border-radius: 10px;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
-  padding: 0 30px 30px 30px;
-}
 .formSpace h1 {
   text-align: center;
   padding: 20px 0;
@@ -73,6 +68,10 @@ html {
 .formSpace form {
   padding: 0 40px;
   box-sizing: border-box;
+}
+.bg-modal .formSpace {
+  height: 670px;
+  margin: auto;
 }
 form .txtField {
   position: relative;
@@ -159,7 +158,6 @@ input[type="submit"] {
   top: 0;
   display: none;
   justify-content: center;
-  align-items: center;
 }
 
 input {
@@ -248,4 +246,13 @@ input[type="date"] {
 .errorMsg {
   position: relative;
   top: 20px;
+}
+
+footer {
+  height: 50px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  background: #313131;
+  color: black;
 }
