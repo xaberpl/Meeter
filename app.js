@@ -1,6 +1,7 @@
 var express = require("express");
 require("dotenv").config();
-
+//import routes
+const postRoutes = require('./routes/adduser')
 // app
 var app = express();
 
@@ -23,32 +24,12 @@ mongoose
   })
   .then(() => console.log("DBconnected"))
   .catch((err) => console.log(err));
-var nameSchema = new mongoose.Schema({
-  firstName: String,
-  lastName: String,
-  email: String,
-  password: String,
-  password2: String,
-  datePicker: String,
-});
-var User = mongoose.model("User", nameSchema);
-// route
 
-app.get("*", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
-});
+// route middleware
+app.use('/api', postRoutes)
 
-app.post("/adduser", (req, res) => {
-  var myData = new User(req.body);
-  myData
-    .save()
-    .then((item) => {
-      res.send("Name saved to database");
-    })
-    .catch((err) => {
-      res.status(400).send("Unable to save to database");
-    });
-});
+
+
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {
