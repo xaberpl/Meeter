@@ -2,6 +2,7 @@ const User = require('../models/user')
 
 exports.create=(req, res) => {
     var myData = new User(req.body);
+    
     myData
       .save()
       .then((item) => {
