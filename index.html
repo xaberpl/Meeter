@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meeter</title>
     <link rel="icon" href="favicon.png" type="image/x-icon" />
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
 
     <script type="text/javascript" src="index.js"></script>
     <script type="text/javascript" src="app.js"></script>
@@ -27,6 +27,7 @@
       <div class="right">
         <div class="formSpace">
           <h1>Zaloguj</h1>
+          <a href="list.html">xddd</a>
           <form method="post">
             <div class="txtField">
               <input type="text" placeholder=" " />
@@ -53,7 +54,7 @@
         <div class="formSpace" index="formSpaceRegister">
           <div class="close">&#10006;</div>
           <h1>Rejestracja</h1>
-          <form class="form" id="form" method="post" action="/adduser">
+          <form class="form" id="form" method="post" action="/api/adduser">
             <div class="txtField">
               <div class="form-control" id="fn">
                 <input
@@ -148,7 +149,7 @@
               <div class="datePicker">
                 <div class="form-control" id="dp">
                 <label>Data urodzenia</label>
-                <input type="date" min=null max=null name="datePicker" id="datePicker"/> <br />
+                <input type="date" name="datePicker" id="datePicker"/> <br />
                 <div class="errorMsg">
                   <small style="bottom: -45px;">Error message</small>
                 </div>

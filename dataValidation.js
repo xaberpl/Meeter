@@ -5,6 +5,7 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
 const datePicker = document.getElementById("datePicker");
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -51,22 +52,16 @@ function checkInputs() {
     mm = "0" + mm;
   }
 
-  document
-    .getElementById("datePicker")
-    .setAttribute("min", 1900 + "-" + 01 + "-" + 01);
-
-  document
-    .getElementById("datePicker")
-    .setAttribute("max", yyyy + "-" + mm + "-" + dd);
 
   let dateCalculation = yyyy - 18 + "-" + mm + "-" + dd;
+
 
   //użycie regex'a do walidacji imion
   const userNameRegex =
     /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/u;
   const passwordRegex =
-    /^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})/u;
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/u;
   if (firstNameValue.match(userNameRegex)) {
     setSuccessFor(firstName);
   } else {

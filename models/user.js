@@ -1,19 +1,20 @@
-const mongoose= require('mongoose')
-const {ObjectId}=mongoose.Schema
+const mongoose = require('mongoose')
+const { ObjectId } = mongoose.Schema
 
 
 var nameSchema = new mongoose.Schema({
-    firstName: {
+  firstName: {
     type: String
-      
+
+
   },
 
-    lastName: String,
-    email: String,
-    password: String,
-    password2: String,
-    datePicker: String,
-    
+  lastName: String,
+  email: String,
+  password: String,
+  password2: String,
+  datePicker: String,
+
 },
-{timestamps: true});
-  module.exports = mongoose.model("User", nameSchema);
+  { timestamps: true });
+module.exports = mongoose.model("User", nameSchema);
