@@ -1,13 +1,14 @@
 const User = require("../models/user");
+const Event = require("../models/event");
 
 exports.create = (req, res) => {
-  console.log(req.body);
+  //console.log(req.body);
   var myData = new User(req.body);
 
   myData
     .save()
     .then((item) => {
-      res.send("Name saved to database");
+      res.send("User saved to database");
       console.log(item);
     })
     .catch((err) => {
@@ -21,4 +22,18 @@ exports.list = (req, res) => {
 
     res.json(users);
   });
+};
+
+exports.addevent = (req, res) => {
+  var myData = new Event(req.body);
+
+  myData
+    .save()
+    .then((item) => {
+      res.send("Event saved to database");
+      console.log(item);
+    })
+    .catch((err) => {
+      res.status(400).send("Unable to save to database");
+    });
 };
