@@ -9,7 +9,7 @@ exports.create = (req, res) => {
     .save()
     .then((item) => {
       res.send("User saved to database");
-      console.log(item);
+      //console.log(item);
     })
     .catch((err) => {
       res.status(400).send("Unable to save to database");
@@ -31,7 +31,7 @@ exports.addevent = (req, res) => {
     .save()
     .then((item) => {
       res.send("Event saved to database");
-      console.log(item);
+      //console.log(item);
     })
     .catch((err) => {
       res.status(400).send("Unable to save to database");

@@ -1,5 +1,4 @@
 const express = require('express');
-
 const router = express.Router();
 
 // import controller methods
@@ -10,4 +9,3 @@ router.get('/users', list);
 router.post('/addevent', addevent);
 
 module.exports = router;
-
