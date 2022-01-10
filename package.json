@@ -23,5 +23,8 @@
     "mongodb": "^4.2.1",
     "mongoose": "^6.0.14"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.47.0"
+  }
 }
