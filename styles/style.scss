@@ -15,14 +15,34 @@ body {
   font-family: "Roboto", sans-serif;
   color: rgb(0, 0, 0);
 }
-
+ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  li a {
+    padding: 0 20px;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+  }
+  & ::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 0;
+    background-color: #c4c4f7;
+    transition: all 0.5s;
+  }
+}
+li a:hover::after {
+  width: 100%;
+}
 header {
   height: 50px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-
 footer {
   height: 50px;
   display: flex;
