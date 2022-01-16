@@ -12,7 +12,7 @@ exports.create = (req, res) => {
       //console.log(item);
     })
     .catch((err) => {
-      res.status(400).send("Unable to save to database");
+      res.status(400).send("Unable to save user to database");
     });
 };
 
@@ -34,6 +34,14 @@ exports.addevent = (req, res) => {
       //console.log(item);
     })
     .catch((err) => {
-      res.status(400).send("Unable to save to database");
+      res.status(400).send("Unable to save event to database");
     });
+};
+
+exports.eventslist = (req, res) => {
+  Event.find({}).exec((err, events) => {
+    if (err) console.log(err);
+
+    res.json(events);
+  });
 };

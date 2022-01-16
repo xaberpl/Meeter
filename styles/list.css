@@ -1,0 +1,25 @@
+.event{
+    display: flex;
+    width: 100% ;
+    background-color:white;
+    justify-content: center;
+    max-height: 200px;
+    margin-bottom: 1%;
+}
+.bottom{
+    display: flex;
+    justify-content:space-evenly;
+    text-align: left;   
+}
+.xd{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* text-overflow: ellipsis; */
+    margin-left: 30px;
+}
