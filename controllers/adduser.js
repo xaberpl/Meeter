@@ -1,15 +1,31 @@
-const User = require("../models/user");
+const UserSchema = require("../models/user");
 const Event = require("../models/event");
+const bcrypt = require('bcryptjs');
 
-exports.create = (req, res) => {
+
+exports.create = async (req, res) => {
   //console.log(req.body);
-  var myData = new User(req.body);
+  const { firstName, lastName, email, password, datepicker } = req.body;
+  let user = await UserSchema.findOne({ email })
 
-  myData
+  if (user) {
+    return res.redirect('../index.html')
+  }
+
+  const hashedPsw = await bcrypt.hash(password, 12);
+
+  user = new UserSchema({
+    firstName,
+    lastName,
+    email,
+    password: hashedPsw,
+    datepicker
+  });
+
+  user
     .save()
     .then((item) => {
-      res.send("User saved to database");
-      //console.log(item);
+      res.redirect('../index.html');
     })
     .catch((err) => {
       res.status(400).send("Unable to save user to database");
@@ -45,3 +61,24 @@ exports.eventslist = (req, res) => {
     res.json(events);
   });
 };
+
+exports.login = async (req, res) => {
+  const { email, password } = req.body;
+  const user = await UserSchema.findOne({ email })
+
+  if (!user) {
+    return res.redirect('../index.html')
+  }
+  //console.log(password);
+  //console.log(user.password)
+  const isMatch = await bcrypt.compare(password, user.password);
+
+  if (!isMatch) {
+    return res.redirect('../index.html')
+  }
+
+  
+//req.session.isAuth = true;
+
+  res.redirect('../mainPage.html')
+}
