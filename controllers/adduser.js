@@ -2,26 +2,15 @@ const UserSchema = require("../models/user");
 const Event = require("../models/event");
 const bcrypt = require('bcryptjs');
 
-//const isAuth = require("../middleware/is-auth");
+exports.mainPageGet = (req, res) => {
+  const username = req.session.username;
+  res.render("mainPage", { name: username });
 
-// exports.mainPageGet = (req, res) =>{
-//   const username = req.session.username;
-//   console.log(req.session);
-//       console.log(req.session.isAuth);
-//   //res.render("dashboard", { name: username });
-// }
-exports.mainPageGet = (req, res) =>{
-  //const username = req.session.username;
-//   req.session.username = user.email;
-// console.log(req.session.username);
-// req.session.isAuth = true;
-// console.log(req.session.isAuth);
-  res.render("mainPage");
 }
 
 
+
 exports.create = async (req, res) => {
-  //console.log(req.body);
   const { firstName, lastName, email, password, datepicker } = req.body;
   let user = await UserSchema.findOne({ email })
 
@@ -86,23 +75,13 @@ exports.login = async (req, res) => {
   if (!user) {
     return res.redirect('../index.html')
   }
-  //console.log(password);
-  //console.log(user.password)
   const isMatch = await bcrypt.compare(password, user.password);
 
   if (!isMatch) {
     return res.redirect('../index.html')
   }
-  // 
-  // console.log(req.session);
-if(req.session.username)
-{console.log('jest');}
-else{
-  console.log('nie ma');
-}
-req.session.username = user.email;
-//console.log(req.session.username);
-req.session.isAuth = true;
-//console.log(req.session.isAuth);
+ 
+  req.session.username = user.email;
+    req.session.isAuth = true;
   res.redirect('../mainPage')
 }

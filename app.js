@@ -13,24 +13,13 @@ var app = express();
 var bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.static(__dirname));
 
-
-//chujwiecoto
 app.set("view engine", "ejs");
 app.use(express.urlencoded({extended: true}));
-// const isAuth = (req,res, next) =>{
-//   if(req.session.isAuth) {
-//     console.log(req.session.isAuth);
-//     next()
-//   } else{
-//     res.redirect("/index.html")
-//   }
-// }
-// app.get("/mainPage", isAuth, (req, res) =>{
-//   res.status(200);
-// });
-// db
+
+//db
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 mongoose
@@ -48,30 +37,21 @@ const store = new MongoDBStore({
   collection: "mySessions"
 })
 // route middleware
-// app.get('./mainPage', appController.mainPageGet);
-app.use('/api', postRoutes )
+//KONIECZNIE NA POCZĄTKU PRZED INNYMI GETAMI I USAMI
+//***************************************************
 app.use(
   session({
     secret: "secret",
     resave: false,
     saveUninitialized: true,
-    store: store,
-    username: String,
+    store: store
     
     
   })
 )
+// **************************************************
+app.use('/api', postRoutes )
 app.get('/mainPage', isAuth, appController.mainPageGet);
-app.get("/xdd", (req,res) =>{
-  console.log(req.session);
-  req.session.isAuth = true;
-  console.log(req.session.isAuth);
-  res.send("dupakupa");
-})
-
-
-
-
 
 //server port
 const port = process.env.PORT || 3000
