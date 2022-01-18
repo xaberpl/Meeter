@@ -1,8 +1,9 @@
 const express = require("express");
 const session = require("express-session");
-mongoDBSession = require('connect-mongodb-session')(session);
-require("dotenv").config();
-
+const MongoDBStore = require("connect-mongodb-session")(session);
+require("dotenv").config(); 
+const appController = require("./controllers/adduser");
+const isAuth = require("./middleware/is-auth");
 
 //import routes
 const postRoutes = require('./routes/adduser')
@@ -12,19 +13,13 @@ var app = express();
 var bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.static(__dirname));
-// const isAuth = (req,res, next) =>{
-//   if(req.session.isAuth) {
-//     console.log(req.session.isAuth);
-//     next()
-//   } else{
-//     res.redirect("/index.html")
-//   }
-// }
-// app.get("/mainPage", isAuth, (req, res) =>{
-//   res.status(200);
-// });
-// db
+
+app.set("view engine", "ejs");
+app.use(express.urlencoded({extended: true}));
+
+//db
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 mongoose
@@ -37,20 +32,26 @@ mongoose
   .then(() => console.log("DBconnected"))
   .catch((err) => console.log(err));
 
-const store = mongoDBSession({
+const store = new MongoDBStore({
   uri: process.env.DATABASE,
   collection: "mySessions"
 })
 // route middleware
-app.use('/api', postRoutes )
+//KONIECZNIE NA POCZĄTKU PRZED INNYMI GETAMI I USAMI
+//***************************************************
 app.use(
   session({
     secret: "secret",
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     store: store
+    
+    
   })
 )
+// **************************************************
+app.use('/api', postRoutes )
+app.get('/mainPage', isAuth, appController.mainPageGet);
 
 //server port
 const port = process.env.PORT || 3000
