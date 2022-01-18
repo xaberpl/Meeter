@@ -12,10 +12,10 @@ const bcrypt = require('bcryptjs');
 // }
 exports.mainPageGet = (req, res) =>{
   //const username = req.session.username;
-  req.session.username = user.email;
-console.log(req.session.username);
-req.session.isAuth = true;
-console.log(req.session.isAuth);
+//   req.session.username = user.email;
+// console.log(req.session.username);
+// req.session.isAuth = true;
+// console.log(req.session.isAuth);
   res.render("mainPage");
 }
 

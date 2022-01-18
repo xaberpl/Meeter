@@ -49,7 +49,6 @@ const store = new MongoDBStore({
 })
 // route middleware
 // app.get('./mainPage', appController.mainPageGet);
-app.get('/mainPage', isAuth, appController.mainPageGet);
 app.use('/api', postRoutes )
 app.use(
   session({
@@ -62,6 +61,15 @@ app.use(
     
   })
 )
+app.get('/mainPage', isAuth, appController.mainPageGet);
+app.get("/xdd", (req,res) =>{
+  console.log(req.session);
+  req.session.isAuth = true;
+  console.log(req.session.isAuth);
+  res.send("dupakupa");
+})
+
+
 
 
 
