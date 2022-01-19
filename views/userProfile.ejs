@@ -30,39 +30,32 @@
     <main>
           <div class="formSpace">
             <h1>Profil użytkownika</h1>
-            <form method="post">
+            <form>
               <div class="txtField">
-                <input type="text" placeholder="Rafał" />
+                <input type="text" value="<%= firstName %>" name="input"  disabled/>
                 <span></span>
                 <label>Imie</label>
               </div>
               <div class="txtField">
-                <input type="text" placeholder="Waszak" />
+                <input type="text" value="<%= lastName %>"  name="input"  disabled/>
                 <span></span>
                 <label>Nazwisko</label>
               </div>
               <div class="txtField">
-                <input type="text" placeholder="23" />
+                <input type="text" value="<%= datePicker %>"  name="input"  disabled/>
                 <span></span>
                 <label>Wiek</label>
               </div>
+              
               <div class="txtField">
-                <input type="text" placeholder="Mężczyzna" />
-                <span></span>
-                <label>Płeć</label>
-              </div>
-              <div class="txtField">
-                <input type="text" placeholder="rav.waszak@gmail.com" />
+                <input type="text" value="<%= email %>" name="input"   disabled/>
                 <span></span>
                 <label>Email</label>
               </div>
-              <div class="txtField">
-                <input type="text" placeholder="Poznań" />
-                <span></span>
-                <label>Miasto</label>
-              </div>
-              <input type="button" value="Edytuj" />
+             
+              
             </form>
+            <button onclick=myFunction()>Edytuj</button>
           </div>
         </div>
     </main>
@@ -70,5 +63,9 @@
         <p>Copyright © Meeter 2022</p>
     </footer>
   </div>
+  <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+  <script src="userProfile.js"></script>
 </body>
 </html>
