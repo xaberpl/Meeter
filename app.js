@@ -1,7 +1,7 @@
 const express = require("express");
 const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
-require("dotenv").config(); 
+require("dotenv").config();
 const appController = require("./controllers/adduser");
 const isAuth = require("./middleware/is-auth");
 
@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 
 app.set("view engine", "ejs");
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
 //db
 var mongoose = require("mongoose");
@@ -45,15 +45,16 @@ app.use(
     resave: false,
     saveUninitialized: true,
     store: store
-    
-    
+
+
   })
 )
 // **************************************************
-app.use('/api', postRoutes )
+app.use('/api', postRoutes)
 app.get('/mainPage', isAuth, appController.mainPageGet);
 
 app.get('/userProfile', isAuth, appController.userProfileGet);
+app.post('/logout', appController.logout_post);
 //server port
 const port = process.env.PORT || 3000
 app.listen(port, () => {
