@@ -3,15 +3,21 @@ const Event = require("../models/event");
 const bcrypt = require('bcryptjs');
 
 exports.mainPageGet = (req, res) => {
-  const username = req.session.username;
-  res.render("mainPage", { name: username });
+  
+  //console.log(email)
+  res.render("mainPage", { email: req.session.email });
 
 }
 
+exports.userProfileGet = (req, res) => {
+ 
+  res.render("userProfile", { firstName: req.session.firstName, lastName: req.session.lastName, email: req.session.email, datePicker: req.session.datePicker });
 
+}
 
 exports.create = async (req, res) => {
-  const { firstName, lastName, email, password, datepicker } = req.body;
+  const { firstName, lastName, email, password, datePicker } = req.body;
+  
   let user = await UserSchema.findOne({ email })
 
   if (user) {
@@ -25,7 +31,7 @@ exports.create = async (req, res) => {
     lastName,
     email,
     password: hashedPsw,
-    datepicker
+    datePicker
   });
 
   user
@@ -80,8 +86,14 @@ exports.login = async (req, res) => {
   if (!isMatch) {
     return res.redirect('../index.html')
   }
- 
-  req.session.username = user.email;
+  
+  req.session.firstName = user.firstName;
+   console.log(req.session.firstName);
+  req.session.lastName = user.lastName;
+   console.log(req.session.lastName);
+  req.session.email = user.email;
+  req.session.datePicker = user.datePicker;
+  console.log(req.session.datePicker);
     req.session.isAuth = true;
   res.redirect('../mainPage')
 }

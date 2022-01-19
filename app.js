@@ -41,7 +41,7 @@ const store = new MongoDBStore({
 //***************************************************
 app.use(
   session({
-    secret: "secret",
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
     store: store
@@ -53,6 +53,7 @@ app.use(
 app.use('/api', postRoutes )
 app.get('/mainPage', isAuth, appController.mainPageGet);
 
+app.get('/userProfile', isAuth, appController.userProfileGet);
 //server port
 const port = process.env.PORT || 3000
 app.listen(port, () => {
