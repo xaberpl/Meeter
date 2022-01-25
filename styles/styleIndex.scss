@@ -1,5 +1,5 @@
-$underlineColor: #2691d9;
-$successColor: #2ecc71;
+$underlineColor: #1cbab3;
+$successColor: #1cbab3;
 $errorColor: #e74c3c;
 $grey: #adadad;
 
@@ -16,10 +16,11 @@ main {
   }
 }
 p {
-  letter-spacing: 1px;
-  font-size: 20px;
-  margin: 10px;
-  font-weight: 500;
+  // letter-spacing: 1px;
+  // font-size: 20px;
+  // margin: 10px;
+  font-weight: bold;
+  display: inline-block;
 }
 .logo {
   display: flex;
@@ -44,7 +45,7 @@ p {
   width: 400px;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
-  padding: 0 30px 30px 30px;
+  padding: 0 30px 0 30px;
   h1 {
     text-align: center;
     padding: 20px 0;
@@ -64,7 +65,7 @@ p {
   display: none;
   justify-content: center;
   .formSpace {
-    height: 670px;
+    // height: 600px;
     margin: auto;
   }
 }
@@ -140,15 +141,17 @@ input[type="submit"] {
   font-weight: 700;
   cursor: pointer;
   margin-top: 15px;
+  margin-bottom: 25px;
 }
 .signupLink {
-  margin: 30px 0;
+  margin: 20px 0;
   text-align: center;
   font-size: 16px;
   color: #666666;
   a {
     color: $underlineColor;
     text-decoration: none;
+    font-weight: bold;
     &:hover {
       text-decoration: underline;
     }
@@ -220,4 +223,9 @@ input[type="date"] {
 .errorMsg {
   position: relative;
   top: 20px;
+}
+
+div.signupLink {
+  font-size: 17px;
+  color: black;
 }
