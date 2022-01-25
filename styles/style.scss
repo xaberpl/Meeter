@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&family=Roboto&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Nunito sans";
 }
 
 html {
-  background: linear-gradient(120deg, #2980b9, #8e44ad);
+  background: linear-gradient(120deg, #10122e, #1cbab3);
   height: 100vh;
 }
 body {
@@ -19,18 +20,21 @@ ul {
   display: flex;
   list-style-type: none;
   align-items: center;
+  color: #1cbab3;
   li a {
     padding: 0 20px;
     text-decoration: none;
-    color: black;
+    color: #21d8cf;
     display: inline-block;
+    font-weight: 600;
+    font-style: 20px;
   }
   & ::after {
     content: "";
     display: block;
     height: 4px;
     width: 0;
-    background-color: #c4c4f7;
+    background-color: #ffffff;
     transition: all 0.5s;
   }
 }
@@ -38,16 +42,19 @@ li a:hover::after {
   width: 100%;
 }
 header {
+  background: linear-gradient(120deg, #0a0b1b, #17857f);
   height: 50px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding-top: 7px;
 }
 footer {
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #313131;
-  color: black;
+  color: white;
+  font-weight: 550;
+  opacity: 60%;
 }
