@@ -1,25 +1,87 @@
-.event{
-    display: flex;
-    width: 100% ;
-    background-color:white;
-    justify-content: center;
-    max-height: 200px;
-    margin-bottom: 1%;
+* {
+  font-size: 14px;
 }
-.bottom{
-    display: flex;
-    justify-content:space-evenly;
-    text-align: left;   
+
+.event {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 700px;
+  background-color: #cfcfcf;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  max-height: 150px;
+  margin-bottom: 1%;
+  border-radius: 25px;
+  /* align-items: centers; */
 }
-.xd{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+
+.bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: left;
 }
-.txt{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    /* text-overflow: ellipsis; */
-    margin-left: 30px;
+
+.bottom2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: left;
 }
+
+.xd {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 35px;
+}
+
+.txt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  /* text-overflow: ellipsis; */
+  margin-left: 30px;
+}
+
+img {
+  border-radius: 25px;
+}
+
+div.bottom p {
+  margin-right: 10px;
+  color: #636363;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+p.description {
+  font-weight: 500;
+}
+/*# sourceMappingURL=list.css.map */
