@@ -1,6 +1,6 @@
 window.addEventListener("load", function () {
   const div1 = document.querySelector("#list");
-  const url = "http://localhost:3000/api/events";
+  const url = "/api/events";
 
   // sending request
   fetch(url).then((response) => {
