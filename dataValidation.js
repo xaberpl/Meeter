@@ -52,9 +52,7 @@ function checkInputs() {
     mm = "0" + mm;
   }
 
-
   let dateCalculation = yyyy - 18 + "-" + mm + "-" + dd;
-
 
   //użycie regex'a do walidacji imion
   const userNameRegex =
