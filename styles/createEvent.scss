@@ -56,19 +56,6 @@ p {
     box-sizing: border-box;
   }
 }
-.bg-modal {
-  background-color: rgba(0, 0, 0, 0.8);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  display: none;
-  justify-content: center;
-  .formSpace {
-    // height: 600px;
-    margin: auto;
-  }
-}
 form .txtField {
   position: relative;
   border-bottom: 2px solid #adadad;
@@ -157,17 +144,6 @@ input[type="submit"] {
     }
   }
 }
-.close {
-  position: relative;
-  right: -20px;
-  font-size: 22px;
-  color: #333;
-  cursor: pointer;
-  float: right;
-  &:hover {
-    color: #666;
-  }
-}
 input[type="date"] {
   margin: 0 auto 30px;
   display: block;
@@ -228,4 +204,12 @@ input[type="date"] {
 div.signupLink {
   font-size: 17px;
   color: black;
+}
+
+select {
+  width: 100%;
+}
+
+.form-control.error select {
+  border-color: #e74c3c;
 }

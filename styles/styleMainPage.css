@@ -13,10 +13,10 @@ main {
 
 main h1 {
   text-align: center;
-  font-size: 54px;
-  color: #521f68;
-  text-transform: uppercase;
-  margin-bottom: 50px;
+  font-size: 21px;
+  color: white;
+  margin-bottom: 15px;
+  font-weight: 300;
 }
 
 main h2 {
@@ -72,25 +72,20 @@ searchBar {
           justify-content: center;
 }
 
-.cta {
-  padding: 15px 30px;
-  background: #c4c4f7;
-  color: #fff;
-  outline: none;
-  border: none;
-  font-weight: 700;
-  text-transform: uppercase;
+searchBar ::-webkit-input-placeholder {
+  color: black;
 }
 
-.signup-btn {
-  padding: 10px 30px;
-  background: #c4c4f7;
-  color: #fff;
-  outline: none;
-  border: none;
-  font-weight: 700;
-  text-transform: uppercase;
-  border-radius: 50px;
+searchBar :-ms-input-placeholder {
+  color: black;
+}
+
+searchBar ::-ms-input-placeholder {
+  color: black;
+}
+
+searchBar ::placeholder {
+  color: black;
 }
 
 select {
@@ -103,17 +98,15 @@ select {
   padding: 0 0.5em;
   color: black;
   cursor: pointer;
-  font-size: 1em;
-  font-family: "Open Sans", sans-serif;
   text-align: center;
+  font-weight: bold;
 }
 
 input {
   border: 0 !important;
   padding: 0 0.5em;
   color: black;
-  font-size: 1em;
-  width: 20em;
+  width: 250px;
   line-height: 4;
   background: #ffffff;
   border: none;
@@ -125,25 +118,51 @@ input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 20em;
-  height: 4em;
+  width: 250px;
   line-height: 3;
   background: #ffffff;
   color: black;
   overflow: hidden;
-  border: none;
   border-left: grey 3px solid;
   border-right: grey 3px solid;
-}
-
-.searchButton {
-  width: auto;
-  background-color: #ff0040;
-  border-radius: 0 25px 25px 0;
-  width: 60px;
+  height: 80px;
+  padding-right: 25px;
 }
 
 #city {
   border-radius: 25px 0 0 25px;
+}
+
+input {
+  height: 80px;
+}
+
+input {
+  height: 80px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#format {
+  font-size: 14px;
+  width: 100%;
+}
+
+.searchButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  width: 80px;
+  height: 80px;
+  background-color: #367cdd;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  border-radius: 0 25px 25px 0;
 }
 /*# sourceMappingURL=styleMainPage.css.map */

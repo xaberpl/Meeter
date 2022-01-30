@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meeter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles/createEvent.css">
+  <link rel="stylesheet" href="styles/style.css" />
+  <script src="https://kit.fontawesome.com/8ac3213b3c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/meeter.png" alt="Logo" width="150px">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="mainPage.html">Szukaj wydarzenia</a></li>
+        <li><a href="createEvent.html">Utwórz wydarzenie</a></li>
+        <li><a href="userProfile.html">Profil użytkownika</a></li>
+        <li><a href="index.html">Wyloguj</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="formSpace"index="formSpaceRegister">
+        <h1>Nowe wydarzenie</h1>
+        <!-- wyrzuciłem action method tez-->
+        <form class="form" id="form">
+          
+          
+          <div class="txtField">
+            <div class="form-control" id="ti">
+              <input
+                type="text"
+                placeholder=" "
+                name="eventTitle"
+                id="eventTitle"
+              />
+              <span></span>
+              <label>Tytuł wydarzenia</label>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <div class="errorMsg">
+                <small>Error message</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="txtField">
+            <div class="form-control" id="dsc">
+              <input
+                type="text"
+                placeholder=" "
+                name="eventDescription"
+                id="eventDescription"
+              />
+              <span></span>
+              <label>Opis wydarzenia</label>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <div class="errorMsg">
+                <small>Error message</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="txtField">
+            <div class="form-control" id="ve">
+              <input
+                type="text"
+                placeholder=" "
+                name="eventVenue"
+                id="eventVenue"
+              />
+              <span></span>
+              <label>Miejscowość</label>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <div class="errorMsg">
+                <small>Error message</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="select">
+            <div class="form-control" id="cat">
+              <select name="eventCategory" id="eventCategory">
+                <option selected disabled>Kategoria wydarzenia</option>
+                <option value="Gastronomia">Gastronomia</option>
+                <option value="Muzyka">Muzyka</option>
+                <option value="Kultura">Kultura</option>
+                <option value="Sport">Sport</option>
+                <option value="Inne">Inne</option>
+              </select>
+              <div class="errorMsg">
+                <small>Error message</small>
+              </div>
+              <!-- <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i> -->
+            </div>
+          </div>
+
+          <textarea id="story" name="story"
+          rows="5" cols="33">
+It was a dark and stormy night...
+</textarea>
+
+
+            <div class="datePicker">
+              <div class="form-control" id="date">
+              <label>Data urodzenia</label>
+              <input type="date" name="eventDate" id="eventDate"/>
+              <div class="errorMsg">
+                <small>Error message</small>         
+              </div>
+              </div>
+            </div>
+          </form>
+          <input type="submit" value="Utwórz wydarzenie" onclick="checkInputs()"/>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Copyright © Meeter 2022</p>
+  </footer>
+  <script src="eventDataValidation.js"></script>
+</body>
+
+</html>

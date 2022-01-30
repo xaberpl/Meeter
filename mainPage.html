@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meeter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles/styleMainPage.css">
+  <link rel="stylesheet" href="styles/style.css" />
+  <script src="https://kit.fontawesome.com/8ac3213b3c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/meeter.png" alt="Logo" width="150px">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="mainPage.html">Szukaj wydarzenia</a></li>
+        <li><a href="createEvent.html">Utwórz wydarzenie</a></li>
+        <li><a href="userProfile.html">Profil użytkownika</a></li>
+        <li><a href="index.html">Wyloguj</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+    <div class ="searchBar">
+      <h1>Znajdź wydarzenie dla siebie :)</h1>
+      <searchBar>
+        <input type="text" class="input" placeholder="Miejscowość" id="city">
+        <div class="select">
+          <select name="format" id="format">
+            <option selected disabled>Kategoria wydarzenia</option>
+            <option value="Gastronomia">Gastronomia</option>
+            <option value="Muzyka">Muzyka</option>
+            <option value="Kultura">Kultura</option>
+            <option value="Sport">Sport</option>
+            <option value="Inne">Inne</option>
+          </select>
+        </div>
+        <input type="date" min=null max=null name="datePicker" id="datePicker" class="select"/>
+        <a href="#" class="searchButton"><i class="fas fa-search"></i></a>
+      </searchBar>
+    </div>
+
+  </main>
+  <footer>
+    <p>Copyright © Meeter 2022</p>
+  </footer>
+</body>
+
+</html>

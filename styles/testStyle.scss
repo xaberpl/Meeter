@@ -57,12 +57,10 @@ p {
   }
 }
 .bg-modal {
-  background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
-  display: none;
   justify-content: center;
   .formSpace {
     // height: 600px;
@@ -229,3 +227,5 @@ div.signupLink {
   font-size: 17px;
   color: black;
 }
+
+////////////////////////////////////////////////////////

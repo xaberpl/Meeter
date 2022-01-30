@@ -24,29 +24,11 @@ window.addEventListener("load", function () {
            <p class="date">Data: ${date}</p>
            <p class="place">Miejsce: ${place}</p>
            <p class="author">Gospodarz: ${author}</p>
-           <p class="createdAt"> Wydarzenie utworzone: ${createdAt}</p>
          </div>
+
        </div>
      </div>`
     })
-
-    //     for (let i = 0; i < data.length; i++) {              
-    //     const {firstName, lastName, email, password, password2, datepicker} = data[i];
-    //     //document.getElementById("demo").innerHTML =data[0].firstName;
-
-
-    //     var array = [firstName, lastName, email];
-    // array.forEach(function(el) {
-    //     var div2 = document.createElement("div");
-    //     div2.className = "User";
-    //     div2.innerHTML = el;
-    //     div1.appendChild(div3);
-
-
-    // });
-    // var div3 = document.createElement("div");
-    //     div3.innerHTML = "-------------------------------------------";
-    //     div1.appendChild(div3);
   }
 
   )
