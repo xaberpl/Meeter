@@ -8,9 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="styles/styleMainPage.css" />
     <link rel="stylesheet" href="styles/style.css" />
-    <script>
-      src = "https://kit.fontawesome.com/8ac3213b3c.js";
-    </script>
+    <script src="https://kit.fontawesome.com/8ac3213b3c.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -21,7 +19,7 @@
       <nav>
         <ul>
           <li><a href="/mainPage">Szukaj wydarzenia</a></li>
-          <li><a href="#">Utwórz wydarzenie</a></li>
+          <li><a href="createEvent.html">Utwórz wydarzenie</a></li>
           <li><a href="/userProfile">Profil użytkownika</a></li>
           <li>
             <form action="/logout" method="POST">
@@ -34,8 +32,7 @@
     <main>
       <div class="searchBar">
         <h1 id="xd">Znajdź wydarzenie dla siebie :)</h1>
-        <h2>Variable</h2>
-        <p><%= email %></p>
+
 
         <searchBar>
           <input
@@ -62,12 +59,14 @@
             id="datePicker"
             class="select"
           />
-          <input type="submit" value="" class="searchButton" />
+          <!-- <input type="submit" value="" class="searchButton" /> -->
+          <a href="#" class="searchButton"><i class="fas fa-search"></i></a>
         </searchBar>
+        <!-- <p><%= email %></p> -->
       </div>
     </main>
     <footer>
-      <p>Copyright © Meeter 2022</p>
+      <p>Copyright © Meeter 2022 </p>
     </footer>
     <script type="text/javascript" src="../mainPage.js"></script>
   </body>
