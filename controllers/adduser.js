@@ -2,10 +2,22 @@ const UserSchema = require("../models/user");
 const Event = require("../models/event");
 const bcrypt = require('bcryptjs');
 
+exports.mainPageGet = (req, res) => {
+
+  //console.log(email)
+  res.render("mainPage", { email: req.session.email });
+
+}
+
+exports.userProfileGet = (req, res) => {
+
+  res.render("userProfile", { firstName: req.session.firstName, lastName: req.session.lastName, email: req.session.email, datePicker: req.session.datePicker });
+
+}
 
 exports.create = async (req, res) => {
-  //console.log(req.body);
-  const { firstName, lastName, email, password, datepicker } = req.body;
+  const { firstName, lastName, email, password, datePicker } = req.body;
+
   let user = await UserSchema.findOne({ email })
 
   if (user) {
@@ -19,7 +31,7 @@ exports.create = async (req, res) => {
     lastName,
     email,
     password: hashedPsw,
-    datepicker
+    datePicker
   });
 
   user
@@ -47,7 +59,6 @@ exports.addevent = (req, res) => {
     .save()
     .then((item) => {
       res.send("Event saved to database");
-      //console.log(item);
     })
     .catch((err) => {
       res.status(400).send("Unable to save event to database");
@@ -69,16 +80,23 @@ exports.login = async (req, res) => {
   if (!user) {
     return res.redirect('../index.html')
   }
-  //console.log(password);
-  //console.log(user.password)
   const isMatch = await bcrypt.compare(password, user.password);
 
   if (!isMatch) {
     return res.redirect('../index.html')
   }
 
-  
-//req.session.isAuth = true;
-
-  res.redirect('../mainPage.html')
+  req.session.firstName = user.firstName;
+  req.session.lastName = user.lastName;
+  req.session.email = user.email;
+  req.session.datePicker = user.datePicker;
+  req.session.isAuth = true;
+  res.redirect('../mainPage')
 }
+
+exports.logout_post = (req, res) => {
+  req.session.destroy((err) => {
+    if (err) throw err;
+    res.redirect("/index.html");
+  });
+};

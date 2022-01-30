@@ -38,7 +38,7 @@ function checkInputs() {
   const password2Value = password2.value.trim();
   // PO ZAKOMENTOWANIU TEGO DZIAŁA
   const dateValue = datePicker.value.trim();
-
+  console.log(dateValue);
   var today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth() + 1; //January is 0!

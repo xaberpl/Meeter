@@ -18,7 +18,7 @@ window.addEventListener("load", function () {
   if (mm < 10) {
     mm = "0" + mm;
   }
-  
+
   document
     .getElementById("datePicker")
     .setAttribute("min", 1900 + "-" + 01 + "-" + 01);
