@@ -14,35 +14,6 @@ p {
   display: inline-block;
 }
 
-.left {
-  min-height: 300px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .formSpace {
   background-color: #fff;
   width: 400px;
@@ -66,57 +37,7 @@ p {
 
 form .txtField {
   position: relative;
-  border-bottom: 2px solid #adadad;
   margin: 30px 0;
-}
-
-form .txtField input {
-  width: 100%;
-  padding: 0 5px;
-  height: 40px;
-  font-size: 16px;
-  border: none;
-  background: none;
-  outline: none;
-}
-
-form .txtField label {
-  position: absolute;
-  top: 50%;
-  left: 5px;
-  color: #adadad;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  font-size: 16px;
-  pointer-events: none;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-form .txtField span::before {
-  content: "";
-  position: absolute;
-  top: 40px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: #1cbab3;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-form .txtField input:focus ~ span::before {
-  width: 100%;
-}
-
-form .txtField input:not(:placeholder-shown) ~ label {
-  top: -5px;
-  border-bottom: #1cbab3;
-}
-
-form .txtField input:focus ~ label {
-  top: -5px;
-  border-bottom: #1cbab3;
 }
 
 .pass {
@@ -176,7 +97,6 @@ input[type="date"] {
   padding: 8px;
   border: 1px solid #adadad;
   float: right;
-  margin-top: 10px;
 }
 
 .datePicker label {
@@ -190,15 +110,14 @@ input[type="date"] {
 }
 
 .form-control label {
-  display: inline-block;
   margin-bottom: 5px;
 }
 
 .form-control i {
   visibility: hidden;
   position: absolute;
-  top: 15px;
-  right: 10px;
+  top: 32px;
+  right: -20px;
 }
 
 .form-control small {
@@ -214,12 +133,20 @@ input[type="date"] {
   border-color: #1cbab3;
 }
 
+.form-control.success textarea {
+  border-color: #1cbab3;
+}
+
 .form-control.success i.fa-check-circle {
   color: #1cbab3;
   visibility: visible;
 }
 
 .form-control.error input {
+  border-color: #e74c3c;
+}
+
+.form-control.error textarea {
   border-color: #e74c3c;
 }
 
@@ -237,6 +164,11 @@ input[type="date"] {
   top: 20px;
 }
 
+.errorMsgDatePicker {
+  position: relative;
+  top: 60px;
+}
+
 div.signupLink {
   font-size: 17px;
   color: black;
@@ -244,9 +176,14 @@ div.signupLink {
 
 select {
   width: 100%;
+  height: 40px;
 }
 
 .form-control.error select {
   border-color: #e74c3c;
+}
+
+input {
+  width: 100%;
 }
 /*# sourceMappingURL=createEvent.css.map */
