@@ -1,5 +1,4 @@
 main {
-  height: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,27 +9,9 @@ main {
           align-items: center;
 }
 
-@media only screen and (max-width: 1200px) {
-  main {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
 p {
   font-weight: bold;
   display: inline-block;
-}
-
-.logo {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .left {

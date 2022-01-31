@@ -3,18 +3,27 @@ window.addEventListener("load", function () {
   const url = "/api/events";
 
   // sending request
-  fetch(url).then((response) => {
+  fetch(url)
+    .then((response) => {
+      return response.json(); // converting byte data to json
+    })
+    .then((data) => {
+      //console.log(data)
 
-    return response.json();  // converting byte data to json
-
-  }).then(data => {
-    //console.log(data)      
-
-    data.map((jeden_element) => {
-      console.log(jeden_element)
-      const { title, description, eventType, place, date, author, isAdult, createdAt } = jeden_element;
-      div1.innerHTML += `<div class="event">
-       <div class="img"><img width="200px" height="200px" src="img/pizza.png" alt="pizza" /></div>
+      data.map((jeden_element) => {
+        console.log(jeden_element);
+        const {
+          title,
+          description,
+          eventType,
+          place,
+          date,
+          author,
+          isAdult,
+          createdAt,
+        } = jeden_element;
+        div1.innerHTML += `<div class="event">
+       <div class="img"><img width="150px" height="150px" src="img/pizza.png" alt="pizza" /></div>
        <div class="txt">
          <h1 class="title">${title}</h1>
          <p class="description">
@@ -23,16 +32,12 @@ window.addEventListener("load", function () {
          <div class="bottom">
            <p class="date">Data: ${date}</p>
            <p class="place">Miejsce: ${place}</p>
-           <p class="author">Gospodarz: ${author}</p>
+           <p class="author">Organizator: ${author}</p>
          </div>
 
        </div>
-     </div>`
+     </div>`;
+      });
     })
-  }
-
-  )
-    .catch(error => alert('Error fetching posts'));
-
-
-})
+    .catch((error) => alert("Error fetching posts"));
+});

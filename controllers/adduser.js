@@ -9,7 +9,7 @@ exports.createEventGet = (req, res) => {
   res.render("createEvent", {  });
 }
 exports.listGet = (req, res) => {
-  res.render("mainPage", {  });
+  res.render("list", {  });
 }
 exports.userProfileGet = (req, res) => {
 
