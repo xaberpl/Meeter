@@ -22,37 +22,59 @@
             <h1>Profil użytkownika</h1>
             <form>
               <div class="txtField">
-                <input type="text" value="<%= firstName %>" name="input"  disabled/>
-                <span></span>
-                <label>Imie</label>
+                <div class="form-control" id="ti">
+                  <label>Imię</label>
+                  <input type="text" value="<%= firstName %>" name="input"  disabled/>
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <div class="errorMsg">
+                    <small>Error message</small>
+                  </div>
+                </div>
               </div>
+
               <div class="txtField">
-                <input type="text" value="<%= lastName %>"  name="input"  disabled/>
-                <span></span>
-                <label>Nazwisko</label>
+                <div class="form-control" id="ti">
+                  <label>Nazwisko</label>
+                  <input type="text" value="<%= lastName %>"  name="input"  disabled/>
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <div class="errorMsg">
+                    <small>Error message</small>
+                  </div>
+                </div>
               </div>
+
               <div class="txtField">
-                <input type="text" value="<%= datePicker %>"  name="input"  disabled/>
-                <span></span>
-                <label>Wiek</label>
+                <div class="form-control" id="ti">
+                  <label>Wiek</label>
+                  <input type="text" value="<%= datePicker %>"  name="input"  disabled/>
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <div class="errorMsg">
+                    <small>Error message</small>
+                  </div>
+                </div>
               </div>
               
               <div class="txtField">
-                <input type="text" value="<%= email %>" name="input"   disabled/>
-                <span></span>
-                <label>Email</label>
+                <div class="form-control" id="ti">
+                  <label>Email</label>
+                  <input type="text" value="<%= email %>" name="input"   disabled/>
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <div class="errorMsg">
+                    <small>Error message</small>
+                  </div>
+                </div>
               </div>
-              
-              
+             
             </form>
             <div class="button"><button onclick=myFunction() class="editButton">Edytuj</button></div>
 
           </div>
         </div>
     </main>
-    <footer>
-      <%- include('../views/partials/footer.ejs'); %>
-    </footer>
   </div>
   <script src=
 "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">

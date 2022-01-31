@@ -76,7 +76,7 @@ function checkInputs() {
   if (eventDateValue == "") {
     setErrorFor(eventDate, "Wybierz date");
   } else if (eventDateValue > dateCalculation) {
-    setErrorFor(eventDate, "Jesteś za młody");
+    setErrorFor(eventDate, "Wybierz poprawną datę");
   } else {
     setSuccessFor(eventDate);
   }

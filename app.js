@@ -6,7 +6,7 @@ const appController = require("./controllers/adduser");
 const isAuth = require("./middleware/is-auth");
 
 //import routes
-const postRoutes = require('./routes/adduser')
+const postRoutes = require("./routes/adduser");
 
 // app
 var app = express();
@@ -34,8 +34,8 @@ mongoose
 
 const store = new MongoDBStore({
   uri: process.env.DATABASE,
-  collection: "mySessions"
-})
+  collection: "mySessions",
+});
 // route middleware
 //KONIECZNIE NA POCZĄTKU PRZED INNYMI GETAMI I USAMI
 //***************************************************
@@ -44,20 +44,19 @@ app.use(
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
-    store: store
-
-
+    store: store,
   })
-)
+);
 // **************************************************
-app.use('/api', postRoutes)
-app.get('/mainPage', isAuth, appController.mainPageGet);
-app.get('/createEvent', isAuth, appController.createEventGet);
-app.get('/userProfile', isAuth, appController.userProfileGet);
-app.get('/logout', appController.logoutGet);
-app.get('/list', isAuth, appController.listGet);
+app.use("/api", postRoutes);
+app.get("/mainPage", isAuth, appController.mainPageGet);
+app.get("/createEvent", isAuth, appController.createEventGet);
+app.get("/userProfile", isAuth, appController.userProfileGet);
+app.get("/logout", appController.logoutGet);
+app.get("/list", isAuth, appController.listGet);
+app.get("/eventPage", isAuth, appController.eventPageGet);
 //server port
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log("Server listening on port " + port);
 });
