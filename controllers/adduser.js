@@ -3,12 +3,14 @@ const Event = require("../models/event");
 const bcrypt = require('bcryptjs');
 
 exports.mainPageGet = (req, res) => {
-
-  //console.log(email)
-  res.render("mainPage", { email: req.session.email });
-
+  res.render("mainPage", {  });
 }
-
+exports.createEventGet = (req, res) => { 
+  res.render("createEvent", {  });
+}
+exports.listGet = (req, res) => {
+  res.render("mainPage", {  });
+}
 exports.userProfileGet = (req, res) => {
 
   res.render("userProfile", { firstName: req.session.firstName, lastName: req.session.lastName, email: req.session.email, datePicker: req.session.datePicker });
@@ -94,7 +96,7 @@ exports.login = async (req, res) => {
   res.redirect('../mainPage')
 }
 
-exports.logout_post = (req, res) => {
+exports.logoutGet = (req, res) => {
   req.session.destroy((err) => {
     if (err) throw err;
     res.redirect("/index.html");
