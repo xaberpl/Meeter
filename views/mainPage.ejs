@@ -12,27 +12,11 @@
   </head>
 
   <body>
-    <header>
-      <div class="logo">
-        <img src="img/meeter.png" alt="Logo" width="150px" />
-      </div>
-      <nav>
-        <ul>
-          <li><a href="/mainPage">Szukaj wydarzenia</a></li>
-          <li><a href="createEvent.html">Utwórz wydarzenie</a></li>
-          <li><a href="/userProfile">Profil użytkownika</a></li>
-          <li>
-            <form action="/logout" method="POST">
-              <button>Wyloguj</button>
-            </form>
-          </li>
-        </ul>
-      </nav>
+    <header><%- include('../views/partials/header.ejs'); %>
     </header>
     <main>
       <div class="searchBar">
         <h1 id="xd">Znajdź wydarzenie dla siebie :)</h1>
-
 
         <searchBar>
           <input

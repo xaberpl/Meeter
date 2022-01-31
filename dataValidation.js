@@ -36,7 +36,6 @@ function checkInputs() {
   const emailValue = email.value.trim();
   const passwordValue = password.value.trim();
   const password2Value = password2.value.trim();
-  // PO ZAKOMENTOWANIU TEGO DZIAŁA
   const dateValue = datePicker.value.trim();
   console.log(dateValue);
   var today = new Date();
