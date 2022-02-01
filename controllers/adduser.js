@@ -6,7 +6,7 @@ exports.mainPageGet = (req, res) => {
   res.render("mainPage", {  });
 }
 exports.createEventGet = (req, res) => { 
-  res.render("createEvent", {  });
+  res.render("createEvent", { firstName: req.session.firstName, lastName: req.session.lastName });
 }
 exports.listGet = (req, res) => {
   res.render("list", {  });
