@@ -77,7 +77,7 @@ function checkInputs() {
     setSuccessFor(eventDate);
   }
 
-  if (eventCategoryValue == "Kategoria wydarzenia") {
+  if (eventCategoryValue == "Wybierz kategorię wydarzenia") {
     setErrorFor(eventCategory, "Wybierz kategorię");
   } else {
     setSuccessFor(eventCategory);
