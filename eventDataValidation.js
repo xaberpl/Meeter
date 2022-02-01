@@ -20,8 +20,7 @@ eventForm.addEventListener("submit", (e) => {
     ve.className === "form-control success" &&
     date.className === "form-control success" &&
     cat.className === "form-control success"
-  ) {
-    console.log("gites majonez");
+  ) {    
     form.submit();
   }
 });
