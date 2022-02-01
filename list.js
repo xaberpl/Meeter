@@ -13,25 +13,24 @@ window.addEventListener("load", function () {
       data.map((jeden_element) => {
         console.log(jeden_element);
         const {
-          title,
-          description,
-          eventType,
-          place,
-          date,
+          eventTitle,
+          eventDescription,
+          eventCategory,
+          eventVenue,
+          eventDate,
           author,
-          isAdult,
           createdAt,
         } = jeden_element;
         div1.innerHTML += `<div class="event">
        <div class="img"><img width="150px" height="150px" src="img/pizza.png" alt="pizza" /></div>
        <div class="txt">
-         <h1 class="title">${title}</h1>
+         <h1 class="title">${eventTitle}</h1>
          <p class="description">
-         ${description}
+         ${eventDescription}
          </p>
          <div class="bottom">
-           <p class="date">Data: ${date}</p>
-           <p class="place">Miejsce: ${place}</p>
+           <p class="date">Data: ${eventDate}</p>
+           <p class="place">Miejsce: ${eventVenue}</p>
            <p class="author">Organizator: ${author}</p>
          </div>
 
