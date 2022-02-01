@@ -1,6 +1,7 @@
 const UserSchema = require("../models/user");
 const Event = require("../models/event");
 const bcrypt = require('bcryptjs');
+const { collection } = require("../models/user");
 
 exports.mainPageGet = (req, res) => {
   res.render("mainPage", {  });
@@ -101,4 +102,11 @@ exports.logoutGet = (req, res) => {
     if (err) throw err;
     res.redirect("/index.html");
   });
+};
+exports.userDelete = async (req, res) => {  
+  const email= req.session.email
+  const user = await UserSchema.findOne({ email })
+  const deleteResult = await UserSchema.deleteMany({ email: email });
+  console.log('Deleted documents =>', deleteResult);
+  res.redirect("/index.html");
 };

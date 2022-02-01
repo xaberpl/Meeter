@@ -54,7 +54,6 @@ app.use('/api', postRoutes)
 app.get('/mainPage', isAuth, appController.mainPageGet);
 app.get('/createEvent', isAuth, appController.createEventGet);
 app.get('/userProfile', isAuth, appController.userProfileGet);
-app.get('/logout', appController.logoutGet);
 app.get('/list', isAuth, appController.listGet);
 //server port
 const port = process.env.PORT || 3000

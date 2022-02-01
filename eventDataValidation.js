@@ -1,13 +1,12 @@
-const form = document.getElementById("form");
+const eventForm = document.getElementById("form");
 const eventTitle = document.getElementById("eventTitle");
 const eventDescription = document.getElementById("eventDescription");
 const eventVenue = document.getElementById("eventVenue");
 const eventDate = document.getElementById("eventDate");
 const eventCategory = document.getElementById("eventCategory");
 
-form.addEventListener("submit", (e) => {
+eventForm.addEventListener("submit", (e) => {
   e.preventDefault();
-
   checkInputs();
   const ti = document.getElementById("ti");
   const dsc = document.getElementById("dsc");
