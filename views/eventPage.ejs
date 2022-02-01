@@ -1,24 +1,41 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meeter</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="styles/eventPage.css" />
+    <title>Event list</title>
     <link rel="stylesheet" href="styles/style.css" />
-    <script src="https://kit.fontawesome.com/8ac3213b3c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/eventPage.css" />
   </head>
 
   <body>
     <header><%- include('../views/partials/header.ejs'); %>
     </header>
     <main>
+      <div class="event">
+        <div class="img"><img width="250px" height="250px" src="img/pizza.png" alt="pizza" /></div>
+        <div class="txt">
+          <h1 class="title">${title}</h1>
+          <p class="description">
+          ${description}
+          </p>
+          <div class="bottom">
+            <p class="date">Data: ${date}</p>
+            <!-- <p class="place">Miejsce: ${place}</p> -->
+                 <p class="place">Lore</p>
+            <p class="author">Organizator: ${author}</p>
+          </div>
+          <div class="buttons">
+            <button class="joinButton">Dołącz do wydarzenia</button>
+            <button class="returnButton">Powrót</button>
+        </div>
+        </div>
+      </div>
     </main>
-    <footer>
-      <%- include('../views/partials/footer.ejs'); %>
-    </footer>
-    <script type="text/javascript" src="../mainPage.js"></script>
+
+    <!-- <script type="text/javascript" src="list.js"></script> -->
+    <footer><%- include('../views/partials/footer.ejs'); %></footer>
+    <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
