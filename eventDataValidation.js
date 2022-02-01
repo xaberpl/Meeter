@@ -1,13 +1,12 @@
-const form = document.getElementById("form");
+const eventForm = document.getElementById("form");
 const eventTitle = document.getElementById("eventTitle");
 const eventDescription = document.getElementById("eventDescription");
 const eventVenue = document.getElementById("eventVenue");
 const eventDate = document.getElementById("eventDate");
 const eventCategory = document.getElementById("eventCategory");
 
-form.addEventListener("submit", (e) => {
+eventForm.addEventListener("submit", (e) => {
   e.preventDefault();
-
   checkInputs();
   const ti = document.getElementById("ti");
   const dsc = document.getElementById("dsc");
@@ -21,7 +20,7 @@ form.addEventListener("submit", (e) => {
     ve.className === "form-control success" &&
     date.className === "form-control success" &&
     cat.className === "form-control success"
-  ) {
+  ) {    
     form.submit();
   }
 });
@@ -49,14 +48,11 @@ function checkInputs() {
     mm = "0" + mm;
   }
 
-  let dateCalculation = yyyy - 18 + "-" + mm + "-" + dd;
+  let dateCalculation = yyyy + "-" + mm + "-" + dd;
 
   //użycie regex'a do walidacji imion
   const userNameRegex =
     /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
-  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/u;
-  const passwordRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/u;
   if (eventTitleValue.match(userNameRegex)) {
     setSuccessFor(eventTitle);
   } else {
@@ -75,8 +71,8 @@ function checkInputs() {
   // //
   if (eventDateValue == "") {
     setErrorFor(eventDate, "Wybierz date");
-  } else if (eventDateValue > dateCalculation) {
-    setErrorFor(eventDate, "Wybierz poprawną datę");
+  } else if (eventDateValue < dateCalculation) {
+    setErrorFor(eventDate, "Nie możesz tworzyć wydarzeń w przeszłości");
   } else {
     setSuccessFor(eventDate);
   }
