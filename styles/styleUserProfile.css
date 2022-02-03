@@ -2,12 +2,13 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 700px;
+  height: calc(100vh - 100px);
 }
 
 p {
@@ -193,7 +194,25 @@ button.editButton {
   margin-bottom: 25px;
 }
 
+button.deleteButton {
+  height: 50px;
+  width: 100%;
+  border: 1px solid;
+  background: #2691d9;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
 .button {
   padding: 0 40px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 /*# sourceMappingURL=styleUserProfile.css.map */

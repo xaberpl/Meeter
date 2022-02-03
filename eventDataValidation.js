@@ -20,7 +20,7 @@ eventForm.addEventListener("submit", (e) => {
     ve.className === "form-control success" &&
     date.className === "form-control success" &&
     cat.className === "form-control success"
-  ) {    
+  ) {
     form.submit();
   }
 });
@@ -53,12 +53,17 @@ function checkInputs() {
   //użycie regex'a do walidacji imion
   const userNameRegex =
     /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
-  if (eventTitleValue.match(userNameRegex)) {
+
+  if (eventTitleValue.length > 25) {
+    setErrorFor(eventTitle, "Tytuł nie może przekraczać 25 znaków");
+  } else if (eventTitleValue.match(userNameRegex)) {
     setSuccessFor(eventTitle);
   } else {
     setErrorFor(eventTitle, "Tytuł niepoprawny");
   }
-  if (eventDescriptionValue.match(userNameRegex)) {
+  if (eventDescriptionValue.length > 400) {
+    setErrorFor(eventDescription, "Opis nie może przekraczać 400 znaków");
+  } else if (eventDescriptionValue.match(userNameRegex)) {
     setSuccessFor(eventDescription);
   } else {
     setErrorFor(eventDescription, "Uzupełnij opis wydarzenia");
@@ -72,7 +77,7 @@ function checkInputs() {
   if (eventDateValue == "") {
     setErrorFor(eventDate, "Wybierz date");
   } else if (eventDateValue < dateCalculation) {
-    setErrorFor(eventDate, "Nie możesz tworzyć wydarzeń w przeszłości");
+    setErrorFor(eventDate, "Wybierz poprawną datę");
   } else {
     setSuccessFor(eventDate);
   }

@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Event list</title>
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="stylesheet" href="styles/eventPage.css" />
-  </head>
 
-  <body>
-    <header><%- include('../views/partials/header.ejs'); %>
-    </header>
-    <main>
-      <div class="event">
-        <div class="img"><img width="250px" height="250px" src="img/pizza.png" alt="pizza" /></div>
-        <div class="txt">
-          <h1 class="title">${title}</h1>
-          <p class="description">
-          ${description}
-          </p>
-          <div class="bottom">
-            <p class="date">Data: ${date}</p>
-            <!-- <p class="place">Miejsce: ${place}</p> -->
-                 <p class="place">Lore</p>
-            <p class="author">Organizator: ${author}</p>
-          </div>
-          <div class="buttons">
-            <button class="joinButton">Dołącz do wydarzenia</button>
-            <button class="returnButton">Powrót</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event list</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/eventPage.css" />
+</head>
+
+<body>
+  <header>
+    <%- include('../views/partials/header.ejs'); %>
+  </header>
+  <main>
+    <div class="event">
+      <div class="img"><img width="250px" height="250px" src="img/pizza.png" alt="pizza" /></div>
+      <div class="txt">
+        <h1 class="title">${title}</h1>
+        <p class="description">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+          Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+          ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
+          fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdie
+        </p>
+        <div class="bottom">
+          <p class="date">Data: ${date}</p>
+          <p class="place">Miejsce: ${place}</p>
+          <p class="author">Organizator: ${author}</p>
         </div>
+        <div class="buttons">
+          <button class="joinButton">Dołącz do wydarzenia</button>
+          <button class="returnButton">Powrót</button>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <!-- <script type="text/javascript" src="list.js"></script> -->
-    <footer><%- include('../views/partials/footer.ejs'); %></footer>
-    <script type="text/javascript" src="app.js"></script>
-  </body>
+  <!-- <script type="text/javascript" src="list.js"></script> -->
+  <footer>
+    <%- include('../views/partials/footer.ejs'); %>
+  </footer>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+
 </html>
