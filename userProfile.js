@@ -6,7 +6,7 @@ function myFunction() {
 }
 
 window.addEventListener("load", function () {
-  document.getElementById("editButton").addEventListener("click", function () {
+  document.getElementById("button").addEventListener("click", function () {
     document.querySelector(".bg-modal").style.display = "flex";
   });
 

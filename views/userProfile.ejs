@@ -75,11 +75,35 @@
         <button onclick="myFunction()" class="editButton">Edytuj</button>
       </div>
       <div class="button">
-        <button onclick="location.href='/api/userDelete'" type="button" class="deleteButton">
+        <!-- <button onclick="location.href='/api/userDelete'" type="button" class="deleteButton">
           Usuń konto
-        </button>
+        </button> -->
+
+      </div>
+      <a href="#" id="button" class="deleteButton">Usuń konto</a>
+    </div>
+
+
+
+
+    <div class="bg-modal">
+      <div class="formSpace" index="formSpaceRegister">
+        <div class="close">&#10006;</div>
+        <h1>Usuwanie konta</h1>
+        <form class="form" id="form" method="post" action="/api/adduser">
+          <div class="txtField">
+            <label>Czy na pewno chcesz usunąć konto?</label>
+            <div class="form-control" id="fn">
+              <button onclick="location.href='/api/userDelete'" type="button" class="deleteButton">Tak, chcę usunąć moje
+                konto</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
+
+
+
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="../userProfile.js"></script>
