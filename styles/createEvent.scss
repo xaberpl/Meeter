@@ -2,20 +2,11 @@ $underlineColor: #1cbab3;
 $successColor: #1cbab3;
 $errorColor: #e74c3c;
 $grey: #adadad;
-
-// body {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: column;
-// }
-
 main {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  height: calc(100vh - 65px);
-  // height: 690px;
+  height: calc(100vh - 50px);
 }
 p {
   font-weight: bold;

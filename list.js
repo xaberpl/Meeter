@@ -52,8 +52,7 @@ window.addEventListener("load", function () {
           const div2 = document.getElementsByClassName("title")[counter];
           div2.innerHTML += " / NIEAKTUALNE";
           document.getElementsByClassName("event")[counter].style.background =
-            "rgb(118 5 5)";
-          console.log("xddddd");
+            "rgb(144 144 144)";
           console.log(eventDate);
           console.log(dateCalculation);
         }

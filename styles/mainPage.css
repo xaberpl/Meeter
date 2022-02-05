@@ -19,43 +19,6 @@ main h1 {
   font-weight: 300;
 }
 
-main h2 {
-  font-size: 25px;
-  color: #fca70c;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 8px;
-}
-
-main p {
-  font-size: 14px;
-  font-weight: 400;
-  color: black;
-  line-height: 31.5px;
-  margin: 30px 0;
-}
-
-.hero-img {
-  max-width: 670px;
-  height: auto;
-}
-
-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 searchBar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -70,6 +33,7 @@ searchBar {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-weight: bold;
 }
 
 searchBar ::-webkit-input-placeholder {
@@ -90,13 +54,6 @@ searchBar ::placeholder {
 
 select {
   border: 0 !important;
-  background: #ffffff;
-  background-image: none;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  padding: 0 0.5em;
-  color: black;
   cursor: pointer;
   text-align: center;
   font-weight: bold;
@@ -106,7 +63,7 @@ input {
   border: 0 !important;
   padding: 0 0.5em;
   color: black;
-  width: 250px;
+  width: 300px;
   line-height: 4;
   background: #ffffff;
   border: none;
@@ -114,27 +71,20 @@ input {
 }
 
 .select {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 250px;
-  line-height: 3;
   background: #ffffff;
   color: black;
-  overflow: hidden;
-  border-left: grey 3px solid;
-  border-right: grey 3px solid;
+  border-left: grey 2px solid;
+  border-right: grey 2px solid;
   height: 80px;
   padding-right: 25px;
 }
 
 #city {
   border-radius: 25px 0 0 25px;
-}
-
-input {
-  height: 80px;
 }
 
 input {
@@ -165,4 +115,8 @@ input {
   text-decoration: none;
   border-radius: 0 25px 25px 0;
 }
-/*# sourceMappingURL=styleMainPage.css.map */
+
+#datePicker {
+  width: 225px;
+}
+/*# sourceMappingURL=mainPage.css.map */

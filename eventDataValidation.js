@@ -26,14 +26,11 @@ eventForm.addEventListener("submit", (e) => {
 });
 
 function checkInputs() {
-  // trim to remove the whitespaces
   const eventTitleValue = eventTitle.value.trim();
   const eventDescriptionValue = eventDescription.value.trim();
   const eventVenueValue = eventVenue.value.trim();
   const eventDateValue = eventDate.value.trim();
   const eventCategoryValue = eventCategory.value.trim();
-
-  // const dateValue = datePicker.value.trim();
 
   var today = new Date();
   var dd = today.getDate();
@@ -50,25 +47,24 @@ function checkInputs() {
 
   let dateCalculation = yyyy + "-" + mm + "-" + dd;
 
-  //użycie regex'a do walidacji imion
-  const userNameRegex =
+  const eventTitleRegex =
     /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
 
   if (eventTitleValue.length > 25) {
     setErrorFor(eventTitle, "Tytuł nie może przekraczać 25 znaków");
-  } else if (eventTitleValue.match(userNameRegex)) {
+  } else if (eventTitleValue.match(eventTitleRegex)) {
     setSuccessFor(eventTitle);
   } else {
     setErrorFor(eventTitle, "Tytuł niepoprawny");
   }
   if (eventDescriptionValue.length > 400) {
     setErrorFor(eventDescription, "Opis nie może przekraczać 400 znaków");
-  } else if (eventDescriptionValue.match(userNameRegex)) {
+  } else if (eventDescriptionValue.match(eventTitleRegex)) {
     setSuccessFor(eventDescription);
   } else {
     setErrorFor(eventDescription, "Uzupełnij opis wydarzenia");
   }
-  if (eventVenueValue.match(userNameRegex)) {
+  if (eventVenueValue.match(eventTitleRegex)) {
     setSuccessFor(eventVenue);
   } else {
     setErrorFor(eventVenue, "Miejscowość niepoprawna");
@@ -99,5 +95,3 @@ function setSuccessFor(input) {
   const formControl = input.parentElement;
   formControl.className = "form-control success";
 }
-
-// data validation for create event page

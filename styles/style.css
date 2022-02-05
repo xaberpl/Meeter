@@ -8,12 +8,14 @@
 }
 
 html {
-  background: #007070;
+  background: -webkit-gradient(linear, left top, right top, from(#10122e), to(#1cbab3));
+  background: linear-gradient(90deg, #10122e, #1cbab3);
   height: 100vh;
 }
 
 body {
   color: black;
+  height: 100vh;
 }
 
 ul {
@@ -64,19 +66,7 @@ header {
   padding-top: 7px;
 }
 
-footer {
-  height: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: white;
-  font-weight: 550;
-  opacity: 60%;
+h1 {
+  font-size: 30px;
 }
 /*# sourceMappingURL=style.css.map */

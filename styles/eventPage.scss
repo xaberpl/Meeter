@@ -7,37 +7,25 @@ main {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 600px;
+  height: calc(100vh - 50px);
 }
 
 .event {
   display: flex;
   width: 1000px;
   background-color: rgb(207, 207, 207);
-  //   justify-content: left;
   height: 250px;
   border-radius: 25px;
-  /* align-items: centers; */
 }
 .bottom {
   display: flex;
-  //   justify-content: space-evenly;
   text-align: left;
   margin-bottom: 10px;
 }
-
-.xd {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 35px;
-}
-.txt {
+.eventInfo {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  /* text-overflow: ellipsis; */
   margin-left: 15px;
   width: 700px;
 }
@@ -58,10 +46,10 @@ h1 {
 
 p.description {
   font-weight: 500;
-  //   flex: 2;
+  flex: 2;
 }
 
-button.returnButton {
+button {
   height: 50px;
   width: 40%;
   border: 1px solid #2691d9;
@@ -75,20 +63,10 @@ button.returnButton {
 }
 
 button.joinButton {
-  height: 50px;
   width: 70%;
-  border: 1px solid #2691d9;
-  background: #2691d9;
-  border-radius: 25px;
-  font-size: 18px;
-  color: #e9f4fb;
-  font-weight: 700;
-  cursor: pointer;
-  margin-right: 50px;
 }
 
 div.buttons {
   margin-bottom: 20px;
   display: flex;
-  justify-content: flex-start;
 }

@@ -1,57 +1,42 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meeter</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="styles/styleMainPage.css" />
-    <link rel="stylesheet" href="styles/style.css" />
-    <script src="https://kit.fontawesome.com/8ac3213b3c.js" crossorigin="anonymous"></script>
-  </head>
 
-  <body>
-    <header><%- include('../views/partials/header.ejs'); %>
-    </header>
-    <main>
-      <div class="searchBar">
-        <h1 id="xd">Znajdź wydarzenie dla siebie :)</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meeter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="styles/mainPage.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <script src="https://kit.fontawesome.com/8ac3213b3c.js" crossorigin="anonymous"></script>
+</head>
 
-        <searchBar>
-          <input
-            type="text"
-            class="input"
-            placeholder="Miejscowość"
-            id="city"
-          />
-          <div class="select">
-            <select name="format" id="format">
-              <option selected disabled>Kategoria wydarzenia</option>
-              <option value="Gastronomia">Gastronomia</option>
-              <option value="Muzyka">Muzyka</option>
-              <option value="Kultura">Kultura</option>
-              <option value="Sport">Sport</option>
-              <option value="Inne">Inne</option>
-            </select>
-          </div>
-          <input
-            type="date"
-            min="null"
-            max="null"
-            name="datePicker"
-            id="datePicker"
-            class="select"
-          />
-          <!-- <input type="submit" value="" class="searchButton" /> -->
-          <a href="#" class="searchButton"><i class="fas fa-search"></i></a>
-        </searchBar>
-        
-      </div>
-    </main>
-    <footer>
-      <%- include('../views/partials/footer.ejs'); %>
-    </footer>
-    <script type="text/javascript" src="../mainPage.js"></script>
-  </body>
+<body>
+  <header>
+    <%- include('../views/partials/header.ejs'); %>
+  </header>
+  <main>
+    <div class="searchBar">
+      <h1 id="xd">Znajdź wydarzenie dla siebie :)</h1>
+      <searchBar>
+        <input type="text" class="input" placeholder="Miejscowość" id="city" />
+        <div class="select">
+          <select name="format" id="format">
+            <option selected disabled>Kategoria wydarzenia</option>
+            <option value="Gastronomia">Gastronomia</option>
+            <option value="Muzyka">Muzyka</option>
+            <option value="Kultura">Kultura</option>
+            <option value="Sport">Sport</option>
+            <option value="Inne">Inne</option>
+          </select>
+        </div>
+        <input type="date" min="null" max="null" name="datePicker" id="datePicker" class="select" />
+        <a href="#" class="searchButton"><i class="fas fa-search"></i></a>
+      </searchBar>
+    </div>
+  </main>
+  <script type="text/javascript" src="../mainPage.js"></script>
+</body>
+
 </html>

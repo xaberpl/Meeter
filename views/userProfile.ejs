@@ -7,7 +7,7 @@
   <title>Meeter</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="styles/styleUserProfile.css" />
+  <link rel="stylesheet" href="styles/userProfile.css" />
   <link rel="stylesheet" href="styles/style.css" />
   <script>
     src = "https://kit.fontawesome.com/8ac3213b3c.js";
@@ -18,7 +18,6 @@
   <header>
     <%- include('../views/partials/header.ejs'); %>
   </header>
-
   <main>
     <div class="formSpace">
       <h1>Profil użytkownika</h1>
@@ -75,16 +74,9 @@
         <button onclick="myFunction()" class="editButton">Edytuj</button>
       </div>
       <div class="button">
-        <!-- <button onclick="location.href='/api/userDelete'" type="button" class="deleteButton">
-          Usuń konto
-        </button> -->
-
       </div>
       <a href="#" id="button" class="deleteButton">Usuń konto</a>
     </div>
-
-
-
 
     <div class="bg-modal">
       <div class="formSpace" index="formSpaceRegister">
@@ -101,9 +93,6 @@
         </form>
       </div>
     </div>
-
-
-
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="../userProfile.js"></script>

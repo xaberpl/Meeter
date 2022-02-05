@@ -1,159 +1,136 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meeter</title>
-    <link rel="icon" href="favicon.png" type="image/x-icon" />
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-    <script type="text/javascript" src="index.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-    <script
-      src="https://kit.fontawesome.com/8ac3213b3c.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="styles/styleIndex.css" />
-    <link rel="stylesheet" href="styles/style.css" />
-  </head>
 
-  <body>
-    <main>
-      <div class="left">
-        <img class="logo" src="img/meeter.png" alt="logo meeter" />
-        <!-- <p>Szukasz najlepszego sposobu na poznanie nowy ludzi?</p>
-        <p>Znalazłeś! Nie szukaj dalej!</p> -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meeter</title>
+  <link rel="icon" href="favicon.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+  <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script src="https://kit.fontawesome.com/8ac3213b3c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles/index.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+  <main>
+    <div class="left">
+      <img class="logo" src="img/meeter.png" alt="logo meeter" />
+    </div>
+    <div class="right">
+      <div class="formSpace">
+        <h1>Logowanie</h1>
+        <form class="form" id="loginForm" method="post" action="/api/login">
+          <div class="txtField">
+            <input type="text" placeholder=" " name="email" />
+            <span></span>
+            <label>Email</label>
+          </div>
+          <div class="txtField">
+            <input type="password" placeholder=" " name="password" />
+            <span></span>
+            <label>Hasło</label>
+          </div>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="pass">Zapomniałeś hasła?</a>
+          <input type="submit" value="Zaloguj" />
+          <div class="signupLink">
+            <p class="reg">Nie masz konta?</p>
+            <a href="#" id="button" class="button">Zarejestruj się!</a>
+          </div>
+        </form>
       </div>
-      <div class="right">
-        <div class="formSpace">
-          <h1>Logowanie</h1>
-          <form class="form" id="loginForm" method="post" action="/api/login">
-            <div class="txtField">
-              <input type="text" placeholder=" " name="email" />
+    </div>
+
+    <div class="bg-modal">
+      <div class="formSpace" index="formSpaceRegister">
+        <div class="close">&#10006;</div>
+        <h1>Rejestracja</h1>
+        <form class="form" id="form" method="post" action="/api/adduser">
+          <div class="txtField">
+            <div class="form-control" id="fn">
+              <input type="text" placeholder=" " name="firstName" id="firstName" />
+              <span></span>
+              <label>Imie</label>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <div class="errorMsg">
+                <small>Error message</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="txtField">
+            <div class="form-control" id="ln">
+              <input type="text" placeholder=" " name="lastName" id="lastName" />
+              <span></span>
+              <label>Nazwisko</label>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <div class="errorMsg">
+                <small>Error message</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="txtField">
+            <div class="form-control" id="em">
+              <input type="text" placeholder=" " name="email" id="email" />
               <span></span>
               <label>Email</label>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <div class="errorMsg">
+                <small>Error message</small>
+              </div>
             </div>
-            <div class="txtField">
-              <input type="password" placeholder=" " name="password" />
+          </div>
+
+          <div class="txtField">
+            <div class="form-control" id="pd">
+              <input type="password" placeholder=" " name="password" id="password" />
               <span></span>
               <label>Hasło</label>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <div class="errorMsg">
+                <small>Error message</small>
+              </div>
             </div>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="pass">Zapomniałeś hasła?</a>
-            <input type="submit" value="Zaloguj" />
-            <div class="signupLink">
-              <p class="reg">Nie masz konta?</p>
-              <a href="#" id="button" class="button">Zarejestruj się!</a>
+          </div>
+
+          <div class="txtField">
+            <div class="form-control" id="pd2">
+              <input type="password" placeholder=" " name="password2" id="password2" />
+              <span></span>
+              <label>Powtórz hasło</label>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <div class="errorMsg">
+                <small>Error message</small>
+              </div>
             </div>
-          </form>
-        </div>
+          </div>
+
+          <div class="datePicker">
+            <div class="form-control" id="dp">
+              <label>Data urodzenia</label>
+              <input type="date" name="datePicker" id="datePicker" /> <br />
+              <div class="errorMsg">
+                <small style="bottom: -45px">Error message</small>
+              </div>
+              <input type="submit" value="Zarejestruj" />
+              <i style="top: 0px" class="fas fa-check-circle"></i>
+              <i style="top: 0px" class="fas fa-exclamation-circle"></i>
+            </div>
+          </div>
+        </form>
       </div>
+    </div>
+  </main>
+  <script src="dataValidation.js"></script>
+</body>
 
-      <div class="bg-modal">
-        <div class="formSpace" index="formSpaceRegister">
-          <div class="close">&#10006;</div>
-          <h1>Rejestracja</h1>
-          <form class="form" id="form" method="post" action="/api/adduser">
-            <div class="txtField">
-              <div class="form-control" id="fn">
-                <input
-                  type="text"
-                  placeholder=" "
-                  name="firstName"
-                  id="firstName"
-                />
-                <span></span>
-                <label>Imie</label>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <div class="errorMsg">
-                  <small>Error message</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="txtField">
-              <div class="form-control" id="ln">
-                <input
-                  type="text"
-                  placeholder=" "
-                  name="lastName"
-                  id="lastName"
-                />
-                <span></span>
-                <label>Nazwisko</label>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <div class="errorMsg">
-                  <small>Error message</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="txtField">
-              <div class="form-control" id="em">
-                <input type="text" placeholder=" " name="email" id="email" />
-                <span></span>
-                <label>Email</label>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <div class="errorMsg">
-                  <small>Error message</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="txtField">
-              <div class="form-control" id="pd">
-                <input
-                  type="password"
-                  placeholder=" "
-                  name="password"
-                  id="password"
-                />
-                <span></span>
-                <label>Hasło</label>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <div class="errorMsg">
-                  <small>Error message</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="txtField">
-              <div class="form-control" id="pd2">
-                <input
-                  type="password"
-                  placeholder=" "
-                  name="password2"
-                  id="password2"
-                />
-                <span></span>
-                <label>Powtórz hasło</label>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <div class="errorMsg">
-                  <small>Error message</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="datePicker">
-              <div class="form-control" id="dp">
-                <label>Data urodzenia</label>
-                <input type="date" name="datePicker" id="datePicker" /> <br />
-                <div class="errorMsg">
-                  <small style="bottom: -45px">Error message</small>
-                </div>
-                <input type="submit" value="Zarejestruj" />
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </main>
-    <script src="dataValidation.js"></script>
-  </body>
 </html>

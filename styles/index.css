@@ -229,7 +229,6 @@ input[type="date"] {
   padding: 8px;
   border: 1px solid #adadad;
   float: right;
-  margin-top: 10px;
 }
 
 .datePicker label {
@@ -243,7 +242,6 @@ input[type="date"] {
 }
 
 .form-control label {
-  display: inline-block;
   margin-bottom: 5px;
 }
 
@@ -294,4 +292,4 @@ div.signupLink {
   font-size: 17px;
   color: black;
 }
-/*# sourceMappingURL=styleIndex.css.map */
+/*# sourceMappingURL=index.css.map */

@@ -7,13 +7,12 @@
 }
 
 html {
-  // background: linear-gradient(120deg, #10122e, #1cbab3);
-  // background-repeat: no-repeat;
-  background: #007070;
+  background: linear-gradient(90deg, #10122e, #1cbab3);
   height: 100vh;
 }
 body {
   color: rgb(0, 0, 0);
+  height: 100vh;
 }
 ul {
   display: flex;
@@ -48,12 +47,7 @@ header {
   align-items: center;
   padding-top: 7px;
 }
-footer {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 550;
-  opacity: 60%;
+
+h1 {
+  font-size: 30px;
 }

@@ -1,8 +1,5 @@
-* {
-  font-size: 14px;
-}
-
 .event {
+  font-size: 14px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,27 +8,18 @@
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
-  max-height: 150px;
+  height: 150px;
   margin-bottom: 1%;
   border-radius: 25px;
-  /* align-items: centers; */
 }
 
 .bottom {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-align: left;
 }
 
-.bottom2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: left;
-}
-
-.xd {
+.list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,7 +33,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 35px;
+  margin-top: 20px;
 }
 
 .txt {
@@ -76,13 +64,7 @@ h1 {
 }
 
 p.description {
-  font-weight: 500;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  overflow: hidden;
+  font-weight: 600;
 }
 
 .expired {
@@ -91,5 +73,13 @@ p.description {
 
 .expired-true {
   visibility: visible;
+}
+
+h1.pageTitle {
+  color: white;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 28px;
+  font-weight: 500;
 }
 /*# sourceMappingURL=list.css.map */

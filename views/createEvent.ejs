@@ -13,122 +13,98 @@
 </head>
 
 <body>
-  <header><%- include('../views/partials/header.ejs'); %>
+  <header>
+    <%- include('../views/partials/header.ejs'); %>
   </header>
   <main>
-    <div class="formSpace"index="formSpaceRegister">
-        <h1>Nowe wydarzenie</h1>
-        <!-- wyrzuciłem action method tez-->
-        <form class="form" id="form" method="post" action="/api/addevent">       
-          <div class="txtField">
-            <div class="form-control" id="ti">
-              <label>Tytuł wydarzenia</label>
-              <input
-                type="text"
-                placeholder=" "
-                name="eventTitle"
-                id="eventTitle"
-              />
-              <i class="fas fa-check-circle"></i>
-              <i class="fas fa-exclamation-circle"></i>
-              <div class="errorMsg">
-                <small>Error message</small>
-              </div>
+    <div class="formSpace">
+      <h1>Nowe wydarzenie</h1>
+      <form class="form" id="form" method="post" action="/api/addevent">
+        <div class="txtField">
+          <div class="form-control" id="ti">
+            <label>Tytuł wydarzenia</label>
+            <input type="text" placeholder=" " name="eventTitle" id="eventTitle" />
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <div class="errorMsg">
+              <small>Error message</small>
             </div>
           </div>
+        </div>
 
-          <div class="txtField">
-            <div class="form-control" id="dsc">
-              <label>Opis wydarzenia</label>
+        <div class="txtField">
+          <div class="form-control" id="dsc">
+            <label>Opis wydarzenia</label>
 
-              <textarea style="resize: none;" id="eventDescription" name="eventDescription"
-              rows="5" cols="33">
+            <textarea style="resize: none;" id="eventDescription" name="eventDescription" rows="5" cols="33">
               </textarea>
-              <i class="fas fa-check-circle"></i>
-              <i class="fas fa-exclamation-circle"></i>
-              <div class="errorMsg">
-                <small>Error message</small>
-              </div>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <div class="errorMsg">
+              <small>Error message</small>
             </div>
           </div>
+        </div>
 
-          <div class="txtField">
-            <div class="form-control" id="ve">
-              <label>Miejscowość</label>
-              <input
-                type="text"
-                placeholder=" "
-                name="eventVenue"
-                id="eventVenue"
-              />
-              <i class="fas fa-check-circle"></i>
-              <i class="fas fa-exclamation-circle"></i>
-              <div class="errorMsg">
-                <small>Error message</small>
-              </div>
+        <div class="txtField">
+          <div class="form-control" id="ve">
+            <label>Miejscowość</label>
+            <input type="text" placeholder=" " name="eventVenue" id="eventVenue" />
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <div class="errorMsg">
+              <small>Error message</small>
             </div>
           </div>
+        </div>
 
-
-          <div class="txtField">
-            <div class="form-control">
-              <label>Organizator</label>
-              <input
-              value="<%- firstName+ ' ' +lastName%>"
-                type="text"
-                placeholder=" "
-                name="author"
-                id="author"
-              />
-              <i class="fas fa-check-circle"></i>
-              <i class="fas fa-exclamation-circle"></i>
-              <div class="errorMsg">
-                <small>Error message</small>
-              </div>
+        <div class="txtField">
+          <div class="form-control">
+            <label>Organizator</label>
+            <input value="<%- firstName+ ' ' +lastName%>" type="text" placeholder=" " name="author" id="author" />
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <div class="errorMsg">
+              <small>Error message</small>
             </div>
           </div>
-
-
-          <div class="select">
-            <div class="form-control" id="cat">
-              <label>Kategoria wydarzenia</label>
-              <select name="eventCategory" id="eventCategory">
-                <option selected disabled>Wybierz kategorię wydarzenia</option>
-                <option value="Gastronomia">Gastronomia</option>
-                <option value="Muzyka">Muzyka</option>
-                <option value="Kultura">Kultura</option>
-                <option value="Sport">Sport</option>
-                <option value="Inne">Inne</option>
-              </select>
-              <div class="errorMsg">
-                <small>Error message</small>
-              </div>
-              <i class="fas fa-check-circle"></i>
-              <i class="fas fa-exclamation-circle"></i>
+        </div>
+        <div class="select">
+          <div class="form-control" id="cat">
+            <label>Kategoria wydarzenia</label>
+            <select name="eventCategory" id="eventCategory">
+              <option selected disabled>Wybierz kategorię wydarzenia</option>
+              <option value="Gastronomia">Gastronomia</option>
+              <option value="Muzyka">Muzyka</option>
+              <option value="Kultura">Kultura</option>
+              <option value="Sport">Sport</option>
+              <option value="Inne">Inne</option>
+            </select>
+            <div class="errorMsg">
+              <small>Error message</small>
             </div>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
           </div>
+        </div>
 
-            <div class="txtField">
-              <div class="form-control" id="date">
-                
-              <label>Data wydarzenia</label>
-              <input type="date" name="eventDate" id="eventDate"/>
-              <div class="errorMsgDatePicker">
-                <small>Error message</small>         
-              </div>
-              <i class="fas fa-check-circle"></i>
-              <i class="fas fa-exclamation-circle"></i>
-              </div>
-            </div>   
-          <input type="submit" value="Utwórz wydarzenie" />
-        </form>
-      </div>
+        <div class="txtField">
+          <div class="form-control" id="date">
+            <label>Data wydarzenia</label>
+            <input type="date" name="eventDate" id="eventDate" />
+            <div class="errorMsgDatePicker">
+              <small>Error message</small>
+            </div>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+          </div>
+        </div>
+
+        <input type="submit" value="Utwórz wydarzenie" />
+      </form>
+    </div>
     </div>
   </main>
-
-  <!-- <footer>
-    <%- include('../views/partials/footer.ejs'); %>
-  </footer>  -->
   <script src="eventDataValidation.js"></script>
 </body>
 

@@ -30,7 +30,6 @@ form.addEventListener("submit", (e) => {
 });
 
 function checkInputs() {
-  // trim to remove the whitespaces
   const firstNameValue = firstName.value.trim();
   const lastNameValue = lastName.value.trim();
   const emailValue = email.value.trim();
@@ -53,7 +52,6 @@ function checkInputs() {
 
   let dateCalculation = yyyy - 18 + "-" + mm + "-" + dd;
 
-  //użycie regex'a do walidacji imion
   const userNameRegex =
     /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/u;
@@ -85,7 +83,6 @@ function checkInputs() {
     setErrorFor(password2, "Podane hasła różnią się");
   }
 
-  // //
   if (dateValue == "") {
     setErrorFor(datePicker, "Wybierz date");
   } else if (dateValue > dateCalculation) {
