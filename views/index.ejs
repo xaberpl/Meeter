@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
-
+ 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,16 +24,37 @@
       <div class="formSpace">
         <h1>Logowanie</h1>
         <form class="form" id="loginForm" method="post" action="/api/login">
+
           <div class="txtField">
-            <input type="text" placeholder=" " name="email" />
-            <span></span>
-            <label>Email</label>
+            <div class="form-control" id="emailLogin">
+              <input type="text" placeholder=" " name="email" id="email" />
+              <span></span>
+              <label>Email</label>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <div class="errorMsg">
+                <% if (wrongEmail){ %>
+                  <small style="visibility: visible;">Niewłaściwy adres email</small>
+                <% };%>
+              </div>
+            </div>
           </div>
+
           <div class="txtField">
-            <input type="password" placeholder=" " name="password" />
-            <span></span>
-            <label>Hasło</label>
+            <div class="form-control" id="emailLogin">
+              <input type="password" placeholder=" " name="password" id="password" />
+              <span></span>
+              <label>Hasło</label>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <div class="errorMsg">
+                <% if (wrongPassword){ %>
+                  <small style="visibility: visible;">Niewłaściwe hasło</small>
+                <% };%>
+              </div>
+            </div>
           </div>
+
           <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="pass">Zapomniałeś hasła?</a>
           <input type="submit" value="Zaloguj" />
           <div class="signupLink">
@@ -131,6 +152,7 @@
     </div>
   </main>
   <script src="dataValidation.js"></script>
+  
 </body>
 
 </html>

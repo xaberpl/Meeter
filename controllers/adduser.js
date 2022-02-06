@@ -1,8 +1,10 @@
 const UserSchema = require("../models/user");
 const Event = require("../models/event");
 const bcrypt = require('bcryptjs');
-const { collection } = require("../models/user");
 
+exports.indexGet = (req, res) => {
+  res.render("index", { wrongEmail:req.session.wrongEmail, wrongPassword:req.session.wrongPassword });
+}
 exports.mainPageGet = (req, res) => {
   res.render("mainPage", {  });
 }
@@ -86,14 +88,18 @@ exports.eventslist = (req, res) => {
 exports.login = async (req, res) => {
   const { email, password } = req.body;
   const user = await UserSchema.findOne({ email });
-
-  if (!user) {
-    return res.redirect("../index.html");
-  }
+  
+  if (!user) {    
+    req.session.wrongPassword=false;
+    req.session.wrongEmail=true;
+    return res.redirect("/index");
+    }
   const isMatch = await bcrypt.compare(password, user.password);
 
   if (!isMatch) {
-    return res.redirect("../index.html");
+    req.session.wrongPassword=true;
+    req.session.wrongEmail=false;
+    return res.redirect("/index");
   }
 
   req.session.firstName = user.firstName;
@@ -101,7 +107,7 @@ exports.login = async (req, res) => {
   req.session.email = user.email;
   req.session.datePicker = user.datePicker;
   req.session.isAuth = true;
-  res.redirect("../mainPage");
+  res.redirect("/mainPage");
 };
 
 exports.logoutGet = (req, res) => {

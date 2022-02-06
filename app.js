@@ -14,7 +14,7 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(__dirname));
+
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
@@ -48,12 +48,22 @@ app.use(
   })
 );
 // **************************************************
+app.get('/',(req,res)=>
+{
+//console.log(req.listGetsession.isAuth)
+if(req.session.isAuth)
+res.redirect('/mainPage')
+else
+res.redirect('/index')}
+)
+app.use(express.static(__dirname));
 app.use('/api', postRoutes)
+app.get('/index',appController.indexGet);
 app.get('/mainPage', isAuth, appController.mainPageGet);
 app.get('/createEvent', isAuth, appController.createEventGet);
 app.get('/userProfile', isAuth, appController.userProfileGet);
 app.get('/list', isAuth, appController.listGet);
-app.get("/eventPage", isAuth, appController.eventPageGet);
+app.get('/eventPage', isAuth, appController.eventPageGet);
 
 //server port
 const port = process.env.PORT || 3000;
