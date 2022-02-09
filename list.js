@@ -32,11 +32,12 @@ window.addEventListener("load", function () {
           eventDate,
           author,
           createdAt,
+          _id,
         } = jeden_element;
         div1.innerHTML += `<div class="event">
        <div class="img"><img width="150px" height="150px" src="img/pizza.png" alt="pizza" /></div>
        <div class="txt">
-         <h1 class="title">${eventTitle}</h1>
+         <a href="/eventPage/${_id}"<h1 class="title">${eventTitle}</h1></a>
          <p class="description">
          ${eventDescription}
          </p>

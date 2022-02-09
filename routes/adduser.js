@@ -6,7 +6,7 @@ const router = express.Router();
 const { create, list, addevent, eventslist, login, logoutGet, userDelete } = require('../controllers/adduser');
 
 router.post('/adduser', create);
-router.get('/users', list);
+// router.get('/users', list);
 router.post('/addevent', addevent);
 router.get('/events', eventslist);
 router.post('/login', login);

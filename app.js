@@ -63,7 +63,7 @@ app.get('/mainPage', isAuth, appController.mainPageGet);
 app.get('/createEvent', isAuth, appController.createEventGet);
 app.get('/userProfile', isAuth, appController.userProfileGet);
 app.get('/list', isAuth, appController.listGet);
-app.get('/eventPage', isAuth, appController.eventPageGet);
+app.get('/eventPage/:_id', appController.eventPageGet);
 
 //server port
 const port = process.env.PORT || 3000;

@@ -2,6 +2,7 @@ const UserSchema = require("../models/user");
 const Event = require("../models/event");
 const bcrypt = require('bcryptjs');
 
+
 exports.indexGet = (req, res) => {
   res.render("index", { wrongEmail:req.session.wrongEmail, wrongPassword:req.session.wrongPassword });
 }
@@ -23,9 +24,9 @@ exports.userProfileGet = (req, res) => {
     datePicker: req.session.datePicker,
   });
 };
-exports.eventPageGet = (req, res) => {
-  res.render("eventPage", {});
-};
+// exports.eventPageGet = (req, res) => {
+//   res.render("eventPage", {});
+// };
 
 exports.create = async (req, res) => {
   const { firstName, lastName, email, password, datePicker } = req.body;
@@ -56,13 +57,13 @@ exports.create = async (req, res) => {
     });
 };
 
-exports.list = (req, res) => {
-  User.find({}).exec((err, users) => {
-    if (err) console.log(err);
+// exports.list = (req, res) => {
+//   User.find({}).exec((err, users) => {
+//     if (err) console.log(err);
 
-    res.json(users);
-  });
-};
+//     res.json(users);
+//   });
+// };
 
 exports.addevent = (req, res) => {
   var myData = new Event(req.body);
@@ -83,6 +84,48 @@ exports.eventslist = (req, res) => {
 
     res.json(events);
   });
+};
+
+exports.eventPageGet = (req, res) => {
+  const {_id} = req.params;
+
+
+  Event.find({_id}).exec((err, event) => {
+    if (err) console.log(err);
+    //if(event[0]){
+     const {
+           eventTitle,
+           eventDescription,
+         eventCategory,
+          eventVenue,
+           eventDate,
+        author
+        }=event[0];
+              //console.log(event[0].eventTitle);
+              
+              res.render("eventPage", { eventTitle:eventTitle, eventDescription:eventDescription, eventCategory:eventCategory, eventVenue:eventVenue, eventDate:eventDate, author:author});
+            //}
+              // else{
+              //   res.status(400).send("Nikt z tego strzelał nie będzie");
+              // }
+              
+        //res.render("eventPage", {eventTitle:eventTitle, eventDescription:eventDescription, eventCategory:eventCategory, eventVenue:eventVenue, eventDate:eventDate, author:author});
+// eventDescription:"", eventCategory:"", eventVenue:"", eventDate:"", author:"" 
+  //      const {_id} = req.params;
+  //  Event.findOne({_id}).exec((err, event) => {
+  //   if (err) console.log(err);
+  //   const {
+  //     eventTitle,
+  //     eventDescription,
+  //     eventCategory,
+  //     eventVenue,
+  //     eventDate,
+  //     author
+  //   }=event;
+    
+  //   res.render("eventPage", {eventTitle:eventTitle, eventDescription:eventDescription, eventCategory:eventCategory, eventVenue:eventVenue, eventDate:eventDate, author:author});
+  //   // res.json(event);
+   });
 };
 
 exports.login = async (req, res) => {
