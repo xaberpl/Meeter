@@ -34,7 +34,7 @@ exports.create = async (req, res) => {
   let user = await UserSchema.findOne({ email });
 
   if (user) {
-    return res.redirect("../index.html");
+    return res.redirect("/index");
   }
 
   const hashedPsw = await bcrypt.hash(password, 12);
@@ -50,7 +50,7 @@ exports.create = async (req, res) => {
   user
     .save()
     .then((item) => {
-      res.redirect("../index.html");
+      res.redirect("/index");
     })
     .catch((err) => {
       res.status(400).send("Unable to save user to database");
@@ -129,15 +129,15 @@ exports.eventPageGet = (req, res) => {
 };
 
 exports.login = async (req, res) => {
-  const { email, password } = req.body;
-  const user = await UserSchema.findOne({ email });
+  const { lgemail, lgpassword } = req.body;
+  const user = await UserSchema.findOne({ lgemail });
   
   if (!user) {    
     req.session.wrongPassword=false;
     req.session.wrongEmail=true;
     return res.redirect("/index");
     }
-  const isMatch = await bcrypt.compare(password, user.password);
+  const isMatch = await bcrypt.compare(lgpassword, user.password);
 
   if (!isMatch) {
     req.session.wrongPassword=true;
@@ -156,7 +156,7 @@ exports.login = async (req, res) => {
 exports.logoutGet = (req, res) => {
   req.session.destroy((err) => {
     if (err) throw err;
-    res.redirect("/index.html");
+    res.redirect("/index");
   });
 };
 exports.userDelete = async (req, res) => {  
@@ -164,6 +164,6 @@ exports.userDelete = async (req, res) => {
   const user = await UserSchema.findOne({ email })
   const deleteResult = await UserSchema.deleteMany({ email: email });
   console.log('Deleted documents =>', deleteResult);
-  res.redirect("/index.html");
+  res.redirect("/index");
 };
 
