@@ -124,14 +124,16 @@ exports.eventPageGet = (req, res) => {
   //   }=event;
     
   //   res.render("eventPage", {eventTitle:eventTitle, eventDescription:eventDescription, eventCategory:eventCategory, eventVenue:eventVenue, eventDate:eventDate, author:author});
-  //   // res.json(event);
+  //   // res.json(event);  
    });
 };
 
 exports.login = async (req, res) => {
   const { lgemail, lgpassword } = req.body;
-  const user = await UserSchema.findOne({ lgemail });
-  
+  console.log(lgemail)
+  const email = lgemail;
+  const user = await UserSchema.findOne({ email });
+  console.log(user)
   if (!user) {    
     req.session.wrongPassword=false;
     req.session.wrongEmail=true;
