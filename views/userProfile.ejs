@@ -22,11 +22,12 @@
   <main>
     <div class="formSpace">
       <h1>Profil użytkownika</h1>
-      <form>
+
+      <form class="form" id="userUpdateForm" method="post" action="/api/userUpdate">
         <div class="txtField">
           <div class="form-control" id="ti">
             <label>Imię</label>
-            <input type="text" value="<%= firstName %>" name="input" disabled />
+            <input type="text" value="<%= firstName %>" name="firstName" disabled />
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <div class="errorMsg">
@@ -38,7 +39,7 @@
         <div class="txtField">
           <div class="form-control" id="ti">
             <label>Nazwisko</label>
-            <input type="text" value="<%= lastName %>" name="input" disabled />
+            <input type="text" value="<%= lastName %>" name="lastName" disabled />
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <div class="errorMsg">
@@ -50,7 +51,7 @@
         <div class="txtField">
           <div class="form-control" id="ti">
             <label>Data urodzenia</label>
-            <input type="text" value="<%= datePicker %>" name="input" disabled />
+            <input type="text" value="<%= datePicker %>" name="datePicker" disabled />
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <div class="errorMsg">
@@ -62,7 +63,7 @@
         <div class="txtField">
           <div class="form-control" id="ti">
             <label>Email</label>
-            <input type="text" value="<%= email %>" name="input" disabled />
+            <input type="text" value="<%= email %>" name="updatedEmail" disabled />
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <div class="errorMsg">
@@ -70,7 +71,9 @@
             </div>
           </div>
         </div>
+        <input type="submit" value="Zaaktualizuj dane" />
       </form>
+
       <div class="button">
         <button onclick="myFunction()" class="editButton">Edytuj</button>
       </div>
@@ -83,6 +86,7 @@
       <div class="formSpace" index="formSpaceRegister">
         <div class="close">&#10006;</div>
         <h1>Usuwanie konta</h1>
+
         <form class="form" id="form" method="post" action="/api/adduser">
           <div class="txtField">
             <label>Czy na pewno chcesz usunąć konto?</label>

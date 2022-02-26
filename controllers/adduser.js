@@ -7,7 +7,7 @@ exports.indexGet = (req, res) => {
   res.render("index", { wrongEmail:req.session.wrongEmail, wrongPassword:req.session.wrongPassword });
 }
 exports.mainPageGet = (req, res) => {
-  res.render("mainPage", {  });
+  res.render("mainPage", { });
 }
 exports.createEventGet = (req, res) => { 
   res.render("createEvent", { firstName: req.session.firstName, lastName: req.session.lastName });
@@ -24,9 +24,6 @@ exports.userProfileGet = (req, res) => {
     datePicker: req.session.datePicker,
   });
 };
-// exports.eventPageGet = (req, res) => {
-//   res.render("eventPage", {});
-// };
 
 exports.create = async (req, res) => {
   const { firstName, lastName, email, password, datePicker } = req.body;
@@ -57,14 +54,6 @@ exports.create = async (req, res) => {
     });
 };
 
-// exports.list = (req, res) => {
-//   User.find({}).exec((err, users) => {
-//     if (err) console.log(err);
-
-//     res.json(users);
-//   });
-// };
-
 exports.addevent = (req, res) => {
   var myData = new Event(req.body);
 
@@ -88,52 +77,27 @@ exports.eventslist = (req, res) => {
 
 exports.eventPageGet = (req, res) => {
   const {_id} = req.params;
-
-
   Event.find({_id}).exec((err, event) => {
     if (err) console.log(err);
-    //if(event[0]){
+   
      const {
            eventTitle,
            eventDescription,
-         eventCategory,
-          eventVenue,
+           eventCategory,
+           eventVenue,
            eventDate,
-        author
-        }=event[0];
-              //console.log(event[0].eventTitle);
+           author
+        }=event[0];              
               
               res.render("eventPage", { eventTitle:eventTitle, eventDescription:eventDescription, eventCategory:eventCategory, eventVenue:eventVenue, eventDate:eventDate, author:author});
-            //}
-              // else{
-              //   res.status(400).send("Nikt z tego strzelał nie będzie");
-              // }
-              
-        //res.render("eventPage", {eventTitle:eventTitle, eventDescription:eventDescription, eventCategory:eventCategory, eventVenue:eventVenue, eventDate:eventDate, author:author});
-// eventDescription:"", eventCategory:"", eventVenue:"", eventDate:"", author:"" 
-  //      const {_id} = req.params;
-  //  Event.findOne({_id}).exec((err, event) => {
-  //   if (err) console.log(err);
-  //   const {
-  //     eventTitle,
-  //     eventDescription,
-  //     eventCategory,
-  //     eventVenue,
-  //     eventDate,
-  //     author
-  //   }=event;
-    
-  //   res.render("eventPage", {eventTitle:eventTitle, eventDescription:eventDescription, eventCategory:eventCategory, eventVenue:eventVenue, eventDate:eventDate, author:author});
-  //   // res.json(event);  
+             
    });
 };
 
 exports.login = async (req, res) => {
   const { lgemail, lgpassword } = req.body;
-  console.log(lgemail)
   const email = lgemail;
   const user = await UserSchema.findOne({ email });
-  console.log(user)
   if (!user) {    
     req.session.wrongPassword=false;
     req.session.wrongEmail=true;
@@ -163,9 +127,20 @@ exports.logoutGet = (req, res) => {
 };
 exports.userDelete = async (req, res) => {  
   const email= req.session.email
-  const user = await UserSchema.findOne({ email })
   const deleteResult = await UserSchema.deleteMany({ email: email });
   console.log('Deleted documents =>', deleteResult);
   res.redirect("/index");
+};
+
+exports.userUpdate = async (req, res) => {  
+  const email= req.session.email
+  const { firstName, lastName, datePicker, updatedEmail } = req.body;
+  const updateResult = await UserSchema.updateOne({ email: email }, {$set: {firstName:firstName, lastName:lastName, datePicker:datePicker, email:updatedEmail}});
+  console.log('Updated documents =>', updateResult);
+  req.session.firstName = firstName;
+  req.session.lastName = lastName;
+  req.session.email = updatedEmail;
+  req.session.datePicker = datePicker;
+  res.redirect("/userProfile"); 
 };
 
