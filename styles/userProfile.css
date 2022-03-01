@@ -185,4 +185,17 @@ a {
   color: grey;
   margin-bottom: 10px;
 }
+
+#updateButton {
+  height: 50px;
+  width: 100%;
+  border: 1px solid;
+  background: #1cbab3;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
 /*# sourceMappingURL=userProfile.css.map */
