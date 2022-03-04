@@ -45,7 +45,6 @@ input {
   border-left: grey 2px solid;
   border-right: grey 2px solid;
   height: 80px;
-  padding-right: 25px;
 }
 #city {
   border-radius: 25px 0 0 25px;
@@ -78,4 +77,13 @@ input {
 
 #datePicker {
   width: 225px;
+}
+
+.city {
+  font-weight: bold;
+  border-radius: 25px 0 0 25px;
+  height: 80px;
+  width: 250px;
+  padding-right: 25px;
+  font-size: 14px;
 }
