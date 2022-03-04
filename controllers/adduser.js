@@ -60,7 +60,8 @@ exports.addevent = (req, res) => {
   myData
     .save()
     .then((item) => {
-      res.send("Event saved to database");
+      //res.send("Event saved to database");
+      res.redirect("/list");
     })
     .catch((err) => {
       res.status(400).send("Unable to save event to database");

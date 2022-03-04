@@ -1,6 +1,7 @@
 window.addEventListener("load", function () {
   const div1 = document.querySelector("#list");
   const url = "/api/events";
+  var img = "/img/favicon.png";
   var today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth() + 1; //January is 0!
@@ -34,8 +35,36 @@ window.addEventListener("load", function () {
           createdAt,
           _id,
         } = jeden_element;
+        console.log(eventCategory)
+        switch (eventCategory) {
+          case "Gastronomia":
+            img = "/img/pizza.png"
+            break;
+          case "Muzyka":
+            img = "/img/muzyka.jpg"
+            break;
+
+          case "Kultura":
+            img = "/img/kultura.png"
+            break;
+
+          case "Sport":
+            img = "/img/sport.png"
+            break;
+
+          case "Inne":
+            img = "/img/favicon.png"
+            break;
+          default:
+            img = "/img/favicon.png"
+        }
         div1.innerHTML += `<div class="event">
-       <div class="img"><img width="150px" height="150px" src="img/pizza.png" alt="pizza" /></div>
+       <div class="img">
+       
+       <img width="150px" height="150px" src="${img}" alt="pizza" />
+       
+       </div>
+       
        <div class="txt">
          <a href="/eventPage/${_id}"<h1 class="title">${eventTitle}</h1></a>
          <p class="description">
@@ -54,8 +83,8 @@ window.addEventListener("load", function () {
           div2.innerHTML += " / NIEAKTUALNE";
           document.getElementsByClassName("event")[counter].style.background =
             "rgb(144 144 144)";
-          console.log(eventDate);
-          console.log(dateCalculation);
+          // console.log(eventDate);
+          // console.log(dateCalculation);
         }
         counter += 1;
       });
