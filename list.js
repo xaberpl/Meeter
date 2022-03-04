@@ -59,12 +59,8 @@ window.addEventListener("load", function () {
             img = "/img/favicon.png"
         }
         div1.innerHTML += `<div class="event">
-       <div class="img">
-       
-       <img width="150px" height="150px" src="${img}" alt="pizza" />
-       
+       <div class="img"><img width="150px" height="150px" src="${img}" alt="pizza" />    
        </div>
-       
        <div class="txt">
          <a href="/eventPage/${_id}"<h1 class="title">${eventTitle}</h1></a>
          <p class="description">

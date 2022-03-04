@@ -75,6 +75,29 @@ exports.eventslist = (req, res) => {
     res.json(events);
   });
 };
+exports.eventFilter = (req, res) => {
+  Event.find({}).exec((err, events) => {
+    if (err) console.log(err);
+    console.log(body);
+  //   const{}=req.body
+  //   const pipeline = [
+  //     {
+  //         '$match': {
+  //             'bedrooms': 1,
+  //             'address.country': country,
+  //             'address.market': market,
+  //             'address.suburb': {
+  //                 '$exists': 1,
+  //                 '$ne': ''
+  //             },
+  //             'room_type': 'Entire home/apt'
+  //         }
+  //     }
+  // ];
+
+  //   res.json(events);
+  });
+};
 
 exports.eventPageGet = (req, res) => {
   const {_id} = req.params;
