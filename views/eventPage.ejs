@@ -8,7 +8,7 @@
   <title>Event list</title>
   <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
   <link rel="stylesheet" href="/styles/style.css" />
-  <link rel="stylesheet" href="/styles/eventPage.css" />  
+  <link rel="stylesheet" href="/styles/eventPage.css" />
 </head>
 
 <body>
@@ -19,18 +19,23 @@
     <div class="event">
       <div class="img"><img width="250px" height="250px" src="/img/pizza.png" alt="pizza" /></div>
       <div class="eventInfo">
-        <h1 class="title"><%= eventTitle %></h1>
+        <h1 class="title">
+          <%= eventTitle %>
+        </h1>
         <p class="description">
           <%= eventDescription %>
         </p>
         <div class="bottom">
-          <p class="date">Data: <%= eventDate %></p>
-          <p class="place">Miejsce: <%= eventVenue %></p>
-          <p class="author">Organizator: <%= author %></p>
+          <p class="date">Data: <%= eventDate %>
+          </p>
+          <p class="place">Miejsce: <%= eventVenue %>
+          </p>
+          <p class="author">Organizator: <%= author %>
+          </p>
         </div>
         <div class="buttons">
           <button class="joinButton">Dołącz do wydarzenia</button>
-          <button class="returnButton">Powrót</button>
+          <button onclick="history.back()" class="returnButton">Powrót</button>
         </div>
       </div>
     </div>
