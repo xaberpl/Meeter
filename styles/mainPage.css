@@ -99,21 +99,15 @@ input {
 }
 
 .searchButton {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: relative;
   color: white;
   width: 80px;
   height: 80px;
   background-color: #367cdd;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   text-decoration: none;
   border-radius: 0 25px 25px 0;
+  position: relative;
+  border: none;
 }
 
 #datePicker {

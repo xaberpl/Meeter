@@ -63,15 +63,17 @@ input {
 }
 
 .searchButton {
-  display: flex;
+  display: relative;
   color: white;
   width: 80px;
   height: 80px;
   background-color: #367cdd;
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
+  // align-items: center;
   text-decoration: none;
   border-radius: 0 25px 25px 0;
+  position: relative;
+  border: none;
 }
 
 #datePicker {
