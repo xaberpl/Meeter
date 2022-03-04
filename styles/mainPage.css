@@ -19,7 +19,7 @@ main h1 {
   font-weight: 300;
 }
 
-searchBar {
+form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,19 +36,19 @@ searchBar {
   font-weight: bold;
 }
 
-searchBar ::-webkit-input-placeholder {
+form ::-webkit-input-placeholder {
   color: black;
 }
 
-searchBar :-ms-input-placeholder {
+form :-ms-input-placeholder {
   color: black;
 }
 
-searchBar ::-ms-input-placeholder {
+form ::-ms-input-placeholder {
   color: black;
 }
 
-searchBar ::placeholder {
+form ::placeholder {
   color: black;
 }
 
