@@ -4,18 +4,18 @@ const bcrypt = require('bcryptjs');
 
 
 exports.indexGet = (req, res) => {
-  res.render("index", { wrongEmail:req.session.wrongEmail, wrongPassword:req.session.wrongPassword });
+  res.render("index", { wrongEmail: req.session.wrongEmail, wrongPassword: req.session.wrongPassword });
 }
 exports.mainPageGet = (req, res) => {
-  res.render("mainPage", { });
+  res.render("mainPage", {});
 }
-exports.createEventGet = (req, res) => { 
+exports.createEventGet = (req, res) => {
   res.render("createEvent", { firstName: req.session.firstName, lastName: req.session.lastName });
 }
+exports.filterListGet = (req, res) => {
+  res.render("filterList", {});
+}
 
-exports.listGet = (req, res) => {
-  res.render("list", {});
-};
 exports.userProfileGet = (req, res) => {
   res.render("userProfile", {
     firstName: req.session.firstName,
@@ -67,6 +67,9 @@ exports.addevent = (req, res) => {
       res.status(400).send("Unable to save event to database");
     });
 };
+exports.listGet = (req, res) => {
+  res.render("list", {});
+};
 
 exports.eventslist = (req, res) => {
   Event.find({}).exec((err, events) => {
@@ -75,63 +78,61 @@ exports.eventslist = (req, res) => {
     res.json(events);
   });
 };
-exports.eventFilter = (req, res) => {
-  Event.find({}).exec((err, events) => {
-    if (err) console.log(err);
-    console.log(body);
-  //   const{}=req.body
-  //   const pipeline = [
-  //     {
-  //         '$match': {
-  //             'bedrooms': 1,
-  //             'address.country': country,
-  //             'address.market': market,
-  //             'address.suburb': {
-  //                 '$exists': 1,
-  //                 '$ne': ''
-  //             },
-  //             'room_type': 'Entire home/apt'
-  //         }
-  //     }
-  // ];
 
-  //   res.json(events);
+exports.filterQuery = (req, res) => {
+  const { kategoria, miasto, datePicker } = req.body
+  req.session.kategoria = kategoria;
+  req.session.miasto = miasto;
+  req.session.datePicker = datePicker;
+  res.redirect("/filterListGet")
+}
+exports.eventFilter = (req, res) => {  
+   Event.find( {
+      'eventCategory': req.session.kategoria,
+      'eventDate': req.session.datePicker,
+      'eventVenue': req.session.miasto,
+    }
+  ).exec((err, events) => {
+    if (err) console.log(err);
+    
+  
+    res.json(events);
   });
 };
 
 exports.eventPageGet = (req, res) => {
-  const {_id} = req.params;
-  Event.find({_id}).exec((err, event) => {
+  const { _id } = req.params;
+  Event.find({ _id }).exec((err, event) => {
     if (err) console.log(err);
-   
-     const {
-           eventTitle,
-           eventDescription,
-           eventCategory,
-           eventVenue,
-           eventDate,
-           author
-        }=event[0];              
-              
-              res.render("eventPage", { eventTitle:eventTitle, eventDescription:eventDescription, eventCategory:eventCategory, eventVenue:eventVenue, eventDate:eventDate, author:author});
-             
-   });
+
+    const {
+      eventTitle,
+      eventDescription,
+      eventCategory,
+      eventVenue,
+      eventDate,
+      author
+    } = event[0];
+
+    res.render("eventPage", { eventTitle: eventTitle, eventDescription: eventDescription, eventCategory: eventCategory, eventVenue: eventVenue, eventDate: eventDate, author: author });
+
+  });
 };
 
 exports.login = async (req, res) => {
   const { lgemail, lgpassword } = req.body;
   const email = lgemail;
   const user = await UserSchema.findOne({ email });
-  if (!user) {    
-    req.session.wrongPassword=false;
-    req.session.wrongEmail=true;
+  if (!user) {
+    req.session.wrongPassword = false;
+    req.session.wrongEmail = true;
     return res.redirect("/index");
-    }
+  }
   const isMatch = await bcrypt.compare(lgpassword, user.password);
 
   if (!isMatch) {
-    req.session.wrongPassword=true;
-    req.session.wrongEmail=false;
+    req.session.wrongPassword = true;
+    req.session.wrongEmail = false;
     return res.redirect("/index");
   }
 
@@ -149,22 +150,22 @@ exports.logoutGet = (req, res) => {
     res.redirect("/index");
   });
 };
-exports.userDelete = async (req, res) => {  
-  const email= req.session.email
+exports.userDelete = async (req, res) => {
+  const email = req.session.email
   const deleteResult = await UserSchema.deleteMany({ email: email });
   console.log('Deleted documents =>', deleteResult);
   res.redirect("/index");
 };
 
-exports.userUpdate = async (req, res) => {  
-  const email= req.session.email
+exports.userUpdate = async (req, res) => {
+  const email = req.session.email
   const { firstName, lastName, datePicker, updatedEmail } = req.body;
-  const updateResult = await UserSchema.updateOne({ email: email }, {$set: {firstName:firstName, lastName:lastName, datePicker:datePicker, email:updatedEmail}});
+  const updateResult = await UserSchema.updateOne({ email: email }, { $set: { firstName: firstName, lastName: lastName, datePicker: datePicker, email: updatedEmail } });
   console.log('Updated documents =>', updateResult);
   req.session.firstName = firstName;
   req.session.lastName = lastName;
   req.session.email = updatedEmail;
   req.session.datePicker = datePicker;
-  res.redirect("/userProfile"); 
+  res.redirect("/userProfile");
 };
 

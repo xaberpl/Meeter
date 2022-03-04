@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event list</title>
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="/styles/style.css" />
+  <link rel="stylesheet" href="/styles/list.css" />
+</head>
+
+<body>
+  <header>
+    <%- include('../views/partials/header.ejs'); %>
+  </header>
+  <h1 class=pageTitle>Wynik wyszukiwania</h1>
+  <div id="list" class="list">
+  </div>
+
+  <script type="text/javascript" src="/app.js"></script>
+  <script type="text/javascript" src="/filterList.js"></script>
+  <footer>
+    <%- include('../views/partials/footer.ejs'); %>
+  </footer>
+</body>
+
+</html>
